@@ -4,4 +4,5 @@
     <string name="label_hex">HEX</string>
     <string name="label_bin">BIN</string>
     <string name="label_asc">ASC</string>
+    <string name="exc_invalid_input"></string>
 </resources>

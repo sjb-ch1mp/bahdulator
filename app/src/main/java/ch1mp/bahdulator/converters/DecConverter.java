@@ -6,14 +6,15 @@ import ch1mp.bahdulator.InvalidInputException;
 
 public class DecConverter extends Converter {
 
-    public DecConverter(EditText input) throws InvalidInputException {
-        super(input);
+    private String input;
+
+    public DecConverter(String input) throws InvalidInputException {
+        inputIsValid(input);
     }
 
-
     @Override
-    public void inputIsValid(EditText input) throws InvalidInputException{
-
+    public String inputIsValid(String input) throws InvalidInputException{
+        return input;
     }
 
     @Override

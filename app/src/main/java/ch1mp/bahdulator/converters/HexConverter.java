@@ -6,13 +6,15 @@ import ch1mp.bahdulator.InvalidInputException;
 
 public class HexConverter extends Converter {
 
-    public HexConverter(EditText input) throws InvalidInputException {
-        super(input);
+    private String input;
+
+    public HexConverter(String input) throws InvalidInputException {
+        inputIsValid(input);
     }
 
     @Override
-    public void inputIsValid(EditText input) throws InvalidInputException{
-
+    public String inputIsValid(String input) throws InvalidInputException{
+        return input;
     }
 
     @Override
