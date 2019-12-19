@@ -23,13 +23,13 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.90" />
+            android:layout_weight="2.5" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.75"
+            android:layout_weight="2.3"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
@@ -51,13 +51,14 @@
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
             android:typeface="monospace" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.90" />
+            android:layout_weight="2.5" />
     </LinearLayout>
 
     <LinearLayout
@@ -69,14 +70,14 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.90" />
+            android:layout_weight="2.5" />
 
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.75"
+            android:layout_weight="2.3"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
@@ -98,13 +99,14 @@
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
             android:typeface="monospace" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.90" />
+            android:layout_weight="2.5" />
 
     </LinearLayout>
 
@@ -117,13 +119,13 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.90" />
+            android:layout_weight="2.5" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.75"
+            android:layout_weight="2.3"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
@@ -145,13 +147,14 @@
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
             android:typeface="monospace" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.90" />
+            android:layout_weight="2.5" />
 
     </LinearLayout>
 
@@ -164,13 +167,13 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.90" />
+            android:layout_weight="2.5" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.75"
+            android:layout_weight="2.3"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
@@ -192,13 +195,14 @@
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
             android:typeface="monospace" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.90" />
+            android:layout_weight="2.5" />
     </LinearLayout>
 
     <Space

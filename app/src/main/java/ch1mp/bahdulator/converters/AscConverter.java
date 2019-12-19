@@ -1,19 +1,15 @@
 package ch1mp.bahdulator.converters;
 
-import android.widget.EditText;
-
-import java.util.Formatter;
-
 import ch1mp.bahdulator.InvalidInputException;
-import ch1mp.bahdulator.R;
 
 public class AscConverter extends Converter {
 
+    private String rawInput;
     private int input;
 
     public AscConverter(String input) throws InvalidInputException {
         this.input = (int) inputIsValid(input).charAt(0);
-
+        rawInput = input;
     }
 
     @Override
@@ -25,23 +21,26 @@ public class AscConverter extends Converter {
     }
 
     @Override
-    public void convertToHexadecimal(EditText output) {
-        String outStr = "0x" + Integer.toHexString(input).toUpperCase();
-        output.setText(outStr);
+    public String convertToHexadecimal() {
+        return "0x" + Integer.toHexString(input).toUpperCase();
     }
 
     @Override
-    public void convertToBinary(EditText output) {
-        output.setText(Integer.toBinaryString(input));
+    public String convertToBinary() {
+        String binStr = Integer.toBinaryString(input);
+        while(binStr.length() % 8 != 0){
+            binStr = "0" + binStr;
+        }
+        return binStr;
     }
 
     @Override
-    public void convertToDecimal(EditText output) {
-        output.setText(input);
+    public String convertToDecimal() {
+        return "" + input;
     }
 
     @Override
-    public void convertToAscii(EditText output) {
-        //do nothing
+    public String convertToAscii() {
+        return rawInput;
     }
 }

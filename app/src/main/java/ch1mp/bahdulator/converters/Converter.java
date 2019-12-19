@@ -1,7 +1,5 @@
 package ch1mp.bahdulator.converters;
 
-import android.widget.EditText;
-
 import ch1mp.bahdulator.InvalidInputException;
 
 /**
@@ -14,8 +12,8 @@ import ch1mp.bahdulator.InvalidInputException;
  */
 public abstract class Converter {
     public abstract String inputIsValid(String input) throws InvalidInputException;
-    public abstract void convertToHexadecimal(EditText output);
-    public abstract void convertToBinary(EditText output);
-    public abstract void convertToDecimal(EditText output);
-    public abstract void convertToAscii(EditText output);
+    public abstract String convertToHexadecimal();
+    public abstract String convertToBinary();
+    public abstract String convertToDecimal();
+    public abstract String convertToAscii();
 }

@@ -1,16 +1,16 @@
 package ch1mp.bahdulator.converters;
 
-import android.widget.EditText;
-
 import ch1mp.bahdulator.InvalidInputException;
 import ch1mp.bahdulator.ascii.AsciiControlChars;
 
 public class BinConverter extends Converter {
 
+    private String rawInput;
     private int input;
 
     public BinConverter(String input) throws InvalidInputException {
         this.input = toInt(inputIsValid(input));
+        rawInput = input;
     }
 
     private int toInt(String input){
@@ -29,27 +29,31 @@ public class BinConverter extends Converter {
     }
 
     @Override
-    public void convertToHexadecimal(EditText output) {
-        String hexStr = "0x" + Integer.toHexString(input).toUpperCase();
-        output.setText(hexStr);
+    public String convertToHexadecimal() {
+        return "0x" + Integer.toHexString(input).toUpperCase();
     }
 
     @Override
-    public void convertToBinary(EditText output) {
-        //do nothing
-    }
-
-    @Override
-    public void convertToDecimal(EditText output) {
-        output.setText(input);
-    }
-
-    @Override
-    public void convertToAscii(EditText output) {
-        if((input >= 0 && input <= 32) || input == 127){
-            output.setText(AsciiControlChars.getControlChar(input).getLabel());
-        }else if(input >= 33 && input <= 126){
-            output.setText((char) input);
+    public String convertToBinary() {
+        String binStr = rawInput;
+        while(binStr.length() % 8 != 0){
+            binStr = "0" + binStr;
         }
+        return binStr;
+    }
+
+    @Override
+    public String convertToDecimal() {
+        return "" + input;
+    }
+
+    @Override
+    public String convertToAscii() {
+        if((input >= 0 && input <= 32) || input == 127){
+            return AsciiControlChars.getControlChar(input).getLabel();
+        }else if(input >= 33 && input <= 126){
+            return "" + (char) input;
+        }
+        return null;
     }
 }

@@ -2,6 +2,7 @@ package ch1mp.bahdulator;
 
 import android.content.Context;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,10 +28,11 @@ class InputHandler {
         this.etHex = etHex;
         this.etBin = etBin;
         this.etAsc = etAsc;
-        setUpListeners();
+        setUpOnKeyListeners();
+        setUpOnTouchListeners();
     }
 
-    private void setUpListeners(){
+    private void setUpOnKeyListeners(){
 
         etDec.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -90,14 +92,67 @@ class InputHandler {
 
     }
 
+    private void setUpOnTouchListeners(){
+
+
+        etAsc.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                clearFields();
+                return false;
+            }
+        });
+
+        etBin.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                clearFields();
+                return false;
+            }
+        });
+
+        etHex.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                clearFields();
+                return false;
+            }
+        });
+
+        etDec.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                clearFields();
+                return false;
+            }
+        });
+    }
+
     private void showErrorMessage(Exception e){
+        clearFields();
+        clearFocus();
         Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
     }
 
     private void doConversion(Converter converter){
-        converter.convertToAscii(etAsc);
-        converter.convertToBinary(etBin);
-        converter.convertToDecimal(etDec);
-        converter.convertToHexadecimal(etHex);
+        etAsc.setText(converter.convertToAscii());
+        etBin.setText(converter.convertToBinary());
+        etDec.setText(converter.convertToDecimal());
+        etHex.setText(converter.convertToHexadecimal());
+        clearFocus();
+    }
+
+    private void clearFocus(){
+        etHex.clearFocus();
+        etAsc.clearFocus();
+        etDec.clearFocus();
+        etBin.clearFocus();
+    }
+
+    private void clearFields(){
+        etHex.setText("");
+        etAsc.setText("");
+        etDec.setText("");
+        etBin.setText("");
     }
 }

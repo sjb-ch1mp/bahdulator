@@ -1,12 +1,11 @@
 package ch1mp.bahdulator.converters;
 
-import android.widget.EditText;
-
 import ch1mp.bahdulator.InvalidInputException;
 import ch1mp.bahdulator.ascii.AsciiControlChars;
 
 public class HexConverter extends Converter {
 
+    private String rawInput;
     private int input;
 
     public HexConverter(String input) throws InvalidInputException {
@@ -21,26 +20,31 @@ public class HexConverter extends Converter {
     }
 
     @Override
-    public void convertToHexadecimal(EditText output) {
-        //do nothing
+    public String convertToHexadecimal() {
+        return rawInput;
     }
 
     @Override
-    public void convertToBinary(EditText output) {
-        output.setText(Integer.toBinaryString(input));
-    }
-
-    @Override
-    public void convertToDecimal(EditText output) {
-        output.setText(input);
-    }
-
-    @Override
-    public void convertToAscii(EditText output) {
-        if((input >= 0 && input <= 32) || input == 127){
-            output.setText(AsciiControlChars.getControlChar(input).getLabel());
-        }else if(input >= 33 && input <= 126){
-            output.setText((char) input);
+    public String convertToBinary() {
+        String binStr = Integer.toBinaryString(input);
+        while(binStr.length() % 8 != 0){
+            binStr = "0" + binStr;
         }
+        return binStr;
+    }
+
+    @Override
+    public String convertToDecimal() {
+        return "" + input;
+    }
+
+    @Override
+    public String convertToAscii() {
+        if((input >= 0 && input <= 32) || input == 127){
+            return AsciiControlChars.getControlChar(input).getLabel();
+        }else if(input >= 33 && input <= 126){
+            return "" + (char) input;
+        }
+        return null;
     }
 }
