@@ -37,7 +37,7 @@ class InputHandler {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
                     try{
-                        doConversion(new DecConverter(etDec));
+                        doConversion(new DecConverter(etDec.getText().toString()));
                     }catch(Exception e){
                         showErrorMessage(e);
                     }
@@ -51,7 +51,7 @@ class InputHandler {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
                     try{
-                        doConversion(new HexConverter(etHex));
+                        doConversion(new HexConverter(etHex.getText().toString()));
                     }catch(Exception e){
                         showErrorMessage(e);
                     }
@@ -65,7 +65,7 @@ class InputHandler {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
                     try{
-                        doConversion(new BinConverter(etBin));
+                        doConversion(new BinConverter(etBin.getText().toString()));
                     }catch(Exception e){
                         showErrorMessage(e);
                     }
@@ -79,7 +79,7 @@ class InputHandler {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
                     try{
-                        doConversion(new AscConverter(etAsc));
+                        doConversion(new AscConverter(etAsc.getText().toString()));
                     }catch(Exception e){
                         showErrorMessage(e);
                     }

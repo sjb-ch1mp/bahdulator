@@ -26,7 +26,7 @@ public class AscConverter extends Converter {
 
     @Override
     public void convertToHexadecimal(EditText output) {
-        String outStr = "0x" + Integer.toHexString(input);
+        String outStr = "0x" + Integer.toHexString(input).toUpperCase();
         output.setText(outStr);
     }
 

@@ -30,7 +30,7 @@ public class BinConverter extends Converter {
 
     @Override
     public void convertToHexadecimal(EditText output) {
-        String hexStr = "0x" + Integer.toHexString(input);
+        String hexStr = "0x" + Integer.toHexString(input).toUpperCase();
         output.setText(hexStr);
     }
 
