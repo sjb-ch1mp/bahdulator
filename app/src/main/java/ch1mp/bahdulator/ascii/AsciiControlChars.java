@@ -5,6 +5,7 @@ package ch1mp.bahdulator.ascii;
  */
 
 public enum AsciiControlChars {
+    NCC(-1, "NOT A VALID ASCII VALUE"),
     NUL(0, "NUL (NULL)"),
     SOH(1, "SOH (START OF HEADER)"),
     STX(2, "STX (START OF TEXT)"),

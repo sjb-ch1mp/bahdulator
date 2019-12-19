@@ -45,6 +45,6 @@ public class DecConverter extends Converter {
         }else if(input >= 33 && input <= 126){
             return "" + (char) input;
         }
-        return null;
+        return AsciiControlChars.getControlChar(-1).getLabel();
     }
 }

@@ -9,17 +9,8 @@ public class BinConverter extends Converter {
     private int input;
 
     public BinConverter(String input) throws InvalidInputException {
-        this.input = toInt(inputIsValid(input));
+        this.input = Integer.parseInt(inputIsValid(input), 2);
         rawInput = input;
-    }
-
-    private int toInt(String input){
-        int inputAsInt = 0;
-        int pow = 0;
-        for(int i=input.length() - 1; i>=0; i--){
-            inputAsInt += Integer.parseInt(input.substring(i, i+1)) * Math.pow(2, pow++);
-        }
-        return inputAsInt;
     }
 
     @Override
@@ -54,6 +45,6 @@ public class BinConverter extends Converter {
         }else if(input >= 33 && input <= 126){
             return "" + (char) input;
         }
-        return null;
+        return AsciiControlChars.getControlChar(-1).getLabel();
     }
 }

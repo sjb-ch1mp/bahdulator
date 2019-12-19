@@ -39,7 +39,9 @@ class InputHandler {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
                     try{
-                        doConversion(new DecConverter(etDec.getText().toString()));
+                        if(!etDec.getText().toString().trim().equals("")){
+                            doConversion(new DecConverter(etDec.getText().toString().trim()));
+                        }
                     }catch(Exception e){
                         showErrorMessage(e);
                     }
@@ -53,7 +55,9 @@ class InputHandler {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
                     try{
-                        doConversion(new HexConverter(etHex.getText().toString()));
+                        if(!etHex.getText().toString().trim().equals("")){
+                            doConversion(new HexConverter(etHex.getText().toString().trim()));
+                        }
                     }catch(Exception e){
                         showErrorMessage(e);
                     }
@@ -67,7 +71,9 @@ class InputHandler {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
                     try{
-                        doConversion(new BinConverter(etBin.getText().toString()));
+                        if(!etBin.getText().toString().trim().equals("")){
+                            doConversion(new BinConverter(etBin.getText().toString().trim()));
+                        }
                     }catch(Exception e){
                         showErrorMessage(e);
                     }
@@ -81,7 +87,9 @@ class InputHandler {
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
                     try{
-                        doConversion(new AscConverter(etAsc.getText().toString()));
+                        if(!etAsc.getText().toString().trim().equals("")){
+                            doConversion(new AscConverter(etAsc.getText().toString().trim()));
+                        }
                     }catch(Exception e){
                         showErrorMessage(e);
                     }

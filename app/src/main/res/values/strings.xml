@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Bahdulator</string>
+    <string name="app_name_caps">BAHDULATOR</string>
     <string name="label_dec">DEC</string>
     <string name="label_hex">HEX</string>
     <string name="label_bin">BIN</string>

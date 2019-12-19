@@ -9,7 +9,9 @@ public class HexConverter extends Converter {
     private int input;
 
     public HexConverter(String input) throws InvalidInputException {
-        this.input = Integer.parseInt("0x" + inputIsValid(input));
+        if(input.matches("^0x")) input = input.substring(2);
+        this.input = Integer.parseInt(inputIsValid(input), 16);
+        rawInput = input;
     }
 
     @Override
@@ -21,7 +23,7 @@ public class HexConverter extends Converter {
 
     @Override
     public String convertToHexadecimal() {
-        return rawInput;
+        return "0x" + rawInput;
     }
 
     @Override
@@ -45,6 +47,6 @@ public class HexConverter extends Converter {
         }else if(input >= 33 && input <= 126){
             return "" + (char) input;
         }
-        return null;
+        return AsciiControlChars.getControlChar(-1).getLabel();
     }
 }
