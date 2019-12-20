@@ -1,18 +1,34 @@
 package ch1mp.bahdulator.protocols;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.HashMap;
 
-public abstract class ProtocolField {
+public class ProtocolField {
 
-    String name;
-    HashMap<Integer, FieldValue> fieldValues;
+    private String name;
+    private HashMap<Integer, FieldValue> fieldValues;
 
-    public ProtocolField(String name, String filePath){
+    ProtocolField(String name, String filePath){
         this.name = name;
         importData(filePath);
     }
 
-    abstract HashMap<Integer, FieldValue> importData(String filePath);
+    private void importData(String filePath) {
+        fieldValues = new HashMap<>(0);
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            String line = br.readLine(); //skip the first line
+            while((line = br.readLine()) != null){
+                String[] fieldData = line.split(",");
+                int key = Integer.parseInt(fieldData[0]);
+                fieldValues.put(key, new FieldValue(key, fieldData[1], fieldData[2]));
+            }
+            br.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public FieldValue getFieldValue(int key){
         return fieldValues.get(key);

@@ -1,13 +1,17 @@
 package ch1mp.bahdulator.protocols;
 
-public class FieldValue {
-    int key;
-    String keyWord;
-    String description;
+class FieldValue {
+    private int key;
+    private String keyWord;
+    private String description;
 
-    public FieldValue(int key, String keyWord, String description){
+    FieldValue(int key, String keyWord, String description){
         this.key = key;
         this.keyWord = keyWord;
         this.description = description;
     }
+
+    int getKey(){ return key; }
+    String getKeyWord(){ return keyWord; }
+    String getDescription(){ return description; }
 }
