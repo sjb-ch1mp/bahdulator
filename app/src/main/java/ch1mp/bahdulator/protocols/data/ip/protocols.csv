@@ -7,8 +7,7 @@ key,keywords,description
 6,TCP,Transmission Control
 7,CBT,CBT
 8,EGP,Exterior Gateway Protocol
-9,IGP,"any private interior gateway             
-(used by Cisco for their IGRP)"
+9,IGP,any private interior gateway (used by Cisco for their IGRP)
 10,BBN-RCC-MON,BBN RCC Monitoring
 11,NVP-II,Network Voice Protocol
 12,PUP,PUP
@@ -51,8 +50,7 @@ key,keywords,description
 53,SWIPE (deprecated),IP with Encryption
 54,NARP,NBMA Address Resolution Protocol
 55,MOBILE,IP Mobility
-56,TLSP,"Transport Layer Security Protocol        
-using Kryptonet key management"
+56,TLSP,Transport Layer Security Protocol using Kryptonet key management
 57,SKIP,SKIP
 58,IPv6-ICMP,ICMP for IPv6
 59,IPv6-NoNxt,No Next Header for IPv6

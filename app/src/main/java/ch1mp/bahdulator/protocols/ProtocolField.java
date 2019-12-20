@@ -9,7 +9,7 @@ public class ProtocolField {
     private String name;
     private HashMap<Integer, FieldValue> fieldValues;
 
-    ProtocolField(String name, String filePath){
+    public ProtocolField(String name, String filePath){
         this.name = name;
         importData(filePath);
     }

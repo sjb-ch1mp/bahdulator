@@ -20,8 +20,8 @@ key,keywords,description
 19,X25,for X.25 PSDN address
 20,ISDN,for ISDN address
 21,RT,for Route Through
-22,NSAP,"for NSAP address, NSAP style A record"
-23,NSAP-PTR,"for domain name pointer, NSAP style"
+22,NSAP,for NSAP address NSAP style A record
+23,NSAP-PTR,for domain name pointer NSAP style
 24,SIG,for security signature
 25,KEY,for security key
 26,PX,X.400 mail mapping information
@@ -77,7 +77,7 @@ key,keywords,description
 250,TSIG,Transaction Signature
 251,IXFR,incremental transfer
 252,AXFR,transfer of an entire zone
-253,MAILB,"mailbox-related RRs (MB, MG or MR)"
+253,MAILB,mailbox-related RRs (MB MG or MR)
 254,MAILA,mail agent RRs (OBSOLETE - see MX)
 255,*,A request for some or all records the server has available
 256,URI,URI

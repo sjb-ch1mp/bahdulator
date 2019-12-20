@@ -3,7 +3,7 @@ key,keywords,description
 1,NOP,No Operation
 130,SEC,Security
 131,LSR,Loose Source Route
-68,TS,Time Stampe
+68,TS,Time Stamp
 133,E-SEC,Extended Security
 134,CIPSO,Commercial Security
 7,RR,Record Route

@@ -213,6 +213,54 @@
             android:layout_weight="2.5" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/container_protocol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+
+        <TextView
+            android:id="@+id/textView_pro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.3"
+            android:background="@color/colorLabel"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/label_pro"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/aldrich" />
+
+        <EditText
+            android:id="@+id/editText_pro"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:typeface="monospace" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+    </LinearLayout>
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,9 +1,12 @@
 package ch1mp.bahdulator;
 
+import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
+import android.hardware.input.InputManager;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -151,10 +154,16 @@ class InputHandler {
     }
 
     private void clearFocus(){
+
         etHex.clearFocus();
         etAsc.clearFocus();
         etDec.clearFocus();
         etBin.clearFocus();
+
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if(imm != null){
+            imm.hideSoftInputFromWindow(etHex.getWindowToken(), 0);
+        }
     }
 
     private void clearFields(){
