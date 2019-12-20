@@ -1,37 +1,25 @@
 package ch1mp.bahdulator.protocols;
 
-import java.io.File;
 import java.util.ArrayList;
 
-public class Protocol {
+public abstract class Protocol {
 
     private String name;
-    private ArrayList<ProtocolField> protocolFields;
+    private ArrayList<Field> fields;
 
-    /**
-     * @param name - must match the directory name for the protocol
-     */
     public Protocol(String name){
         this.name = name;
-        importData("data/" + name);
+        fields = new ArrayList<>(0);
     }
 
-    private void importData(String folderPath){
-        protocolFields = new ArrayList<>(0);
-        File[] files = new File(folderPath).listFiles();
-        if(files != null){
-            for(File f : files){
-                String name = f.getName();
-                name = name.substring(0, name.lastIndexOf("."));
-                protocolFields.add(new ProtocolField(name, f.getPath()));
-            }
-        }
+    public void addField(Field field){
+        fields.add(field);
     }
 
-    public FieldValue getFieldValue(int key){
-        for(ProtocolField pf : protocolFields){
-            FieldValue fieldValue = pf.getFieldValue(key);
-            if(fieldValue != null) return fieldValue;
+    public String getFieldValue(int key){
+        for(Field f : fields){
+            String value = f.getFieldValue(key);
+            if(value != null) return name + " : " + f.getName() + " : " + value;
         }
         return null;
     }
