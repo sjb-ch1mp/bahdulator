@@ -1,48 +1,74 @@
 package ch1mp.bahdulator;
 
 import android.content.Context;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import ch1mp.bahdulator.protocols.Protocol;
-import ch1mp.bahdulator.protocols.eth.*;
-import ch1mp.bahdulator.protocols.icmp.*;
-import ch1mp.bahdulator.protocols.icmpv6.*;
-import ch1mp.bahdulator.protocols.ipv4.*;
-import ch1mp.bahdulator.protocols.ipv6.*;
-import ch1mp.bahdulator.protocols.dns.*;
+import ch1mp.bahdulator.protocols.ProtocolField;
+import ch1mp.bahdulator.protocols.Value;
+import ch1mp.bahdulator.protocols.fields.*;
+
 
 class ProtocolHandler {
 
-    private ArrayList<Protocol> protocols;
+    private ArrayList<ProtocolField> protocolFields;
     private Context context;
     private EditText display;
     private TextView menuAnchor;
     private PopupMenu protocolMenu;
 
     ProtocolHandler(Context context, TextView menuAnchor, EditText display){
-        loadProtocols();
+        loadProtocolFields();
         this.context = context;
         this.display = display;
         this.menuAnchor = menuAnchor;
+        setUpMenu();
+    }
+
+    void setUpMenu(){
         protocolMenu = new PopupMenu(context, menuAnchor);
+        protocolMenu.getMenuInflater().inflate(R.menu.protocol_menu, protocolMenu.getMenu());
+        protocolMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                ProtocolField pf = getProtocolField(item.getTitle().toString());
+                if(pf != null){
+                    Value value = pf.getFieldValue(((MainActivity) context).getActiveValue());
+                    if(value != null){
+                        if(value.getId() != value.getDescription())
+                            display.setText(value.getId() + ": " + value.getDescription());
+                        else
+                            display.setText(value.getId());
+                    }
+                }
+                return false;
+            }
+        });
     }
 
-    void loadProtocols(){
-        protocols = new ArrayList<>(0);
-        protocols.add(new DNS());
-        protocols.add(new Ethernet());
-        protocols.add(new ICMP());
-        protocols.add(new ICMPv6());
-        protocols.add(new IPv4());
-        protocols.add(new IPv6());
+    void loadProtocolFields(){
+        protocolFields = new ArrayList<>(0);
+        protocolFields.add(new DNSOpCodes());
+        protocolFields.add(new DNSRCodes());
+        protocolFields.add(new DNSRRTypes());
+        protocolFields.add(new EtherTypes());
+        protocolFields.add(new ICMPTypes());
+        protocolFields.add(new ICMPv6Types());
+        protocolFields.add(new IPv4Options());
+        protocolFields.add(new IPv4Protocols());
+        protocolFields.add(new IPv6ExtensionHeaders());
     }
 
-    void loadMatchingFieldValues(int value){
-        //clear the popup menu and then
-        //load all matching field values into the popup menu
+    ProtocolField getProtocolField(String name){
+        for(ProtocolField pf : protocolFields){
+            if(pf.getName().equals(name)){
+                return pf;
+            }
+        }
+        return null;
     }
 }

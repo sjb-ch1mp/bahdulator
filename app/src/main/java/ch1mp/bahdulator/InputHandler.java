@@ -142,6 +142,7 @@ class InputHandler {
     private void showErrorMessage(Exception e){
         clearFields();
         clearFocus();
+        ((MainActivity) context).setActiveValue(-1);
         Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
     }
 
@@ -150,6 +151,9 @@ class InputHandler {
         etBin.setText(converter.convertToBinary());
         etDec.setText(converter.convertToDecimal());
         etHex.setText(converter.convertToHexadecimal());
+
+        ((MainActivity) context).setActiveValue(Integer.parseInt(converter.convertToDecimal()));
+
         clearFocus();
     }
 
@@ -171,5 +175,6 @@ class InputHandler {
         etAsc.setText("");
         etDec.setText("");
         etBin.setText("");
+        ((MainActivity) context).setActiveValue(-1);
     }
 }

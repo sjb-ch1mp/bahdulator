@@ -2,21 +2,21 @@ package ch1mp.bahdulator.protocols;
 
 import java.util.HashMap;
 
-public abstract class Field {
+public abstract class ProtocolField {
 
     private String name;
-    private HashMap<Integer, String> values;
+    private HashMap<Integer, Value> values;
 
-    public Field(String name){
+    public ProtocolField(String name){
         this.name = name;
         values = new HashMap<>(0);
     }
 
-    public void addValue(int value, String name){
-        values.put(value, name);
+    public void addValue(int key, Value value){
+        values.put(key, value);
     }
 
-    String getFieldValue(int key){
+    public Value getFieldValue(int key){
         return values.get(key);
     }
 

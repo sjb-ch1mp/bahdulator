@@ -1,4 +1,6 @@
 <resources>
+
+    <!-- MAIN LABELS -->
     <string name="app_name">Bahdulator</string>
     <string name="app_name_caps">BAHDULATOR</string>
     <string name="label_dec">DEC</string>
@@ -6,5 +8,17 @@
     <string name="label_bin">BIN</string>
     <string name="label_asc">ASC</string>
     <string name="label_pro">PRO</string>
-    <string name="exc_invalid_input"></string>
+
+    <!-- PROTOCOL MENU -->
+    <string name="dns_opcodes">dns.opcodes</string>
+    <string name="dns_rcodes">dns.rcodes</string>
+    <string name="dns_rrtypes">dns.rr_types</string>
+    <string name="eth_types">eth.types</string>
+    <string name="icmp_types">icmp.types</string>
+    <string name="icmpv6_types">icmpv6.types</string>
+    <string name="ipv4_options">ipv4.options</string>
+    <string name="ipv4_protocols">ipv4.protocols</string>
+    <string name="ipv6_extension_headers">ipv6.extension_headers</string>
+    <string name="tcp_common_ports">tcp.common_ports</string>
+    <string name="udp_common_ports">udp.common_ports</string>
 </resources>

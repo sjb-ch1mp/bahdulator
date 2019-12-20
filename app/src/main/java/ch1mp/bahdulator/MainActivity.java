@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     InputHandler inputHandler;
     ProtocolHandler protocolHandler;
+    int activeValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +34,15 @@ public class MainActivity extends AppCompatActivity {
                 (TextView) findViewById(R.id.textView_pro),
                 (EditText) findViewById(R.id.editText_pro)
         );
+
+        activeValue = -1;
+    }
+
+    public void setActiveValue(int activeValue){
+        this.activeValue = activeValue;
+    }
+
+    public int getActiveValue(){
+        return activeValue;
     }
 }
