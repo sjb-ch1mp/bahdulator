@@ -1,4 +1,4 @@
-key,keyword,description
+key,keywords,description
 0,HOPOPT,IPv6 Hop-by-Hop Option
 43,IPv6-Route,Routing Header for IPv6
 44,IPv6-Frag,Fragment Header for IPv6
