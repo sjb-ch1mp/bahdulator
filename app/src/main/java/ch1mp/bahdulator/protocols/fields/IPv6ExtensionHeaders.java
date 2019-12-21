@@ -17,7 +17,7 @@ public class IPv6ExtensionHeaders extends ProtocolField {
         super.addValue(135, new Value("Mobility Header", "Mobility Header"));
         super.addValue(139, new Value("HIP", "Host Identity Protocol"));
         super.addValue(140, new Value("Shim6", "Shim6 Protocol"));
-        super.addValue(253, new Value("", "Use for experimentation and testing"));
-        super.addValue(254, new Value("", "Use for experimentation and testing"));
+        super.addValue(253, new Value("Use for experimentation and testing", "Use for experimentation and testing"));
+        super.addValue(254, new Value("Use for experimentation and testing", "Use for experimentation and testing"));
     }
 }

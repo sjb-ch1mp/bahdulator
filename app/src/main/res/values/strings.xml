@@ -21,4 +21,8 @@
     <string name="ipv6_extension_headers">ipv6.extension_headers</string>
     <string name="tcp_common_ports">tcp.common_ports</string>
     <string name="udp_common_ports">udp.common_ports</string>
+    <string name="nothing_found">Nothing found</string>
+    <string name="hint_select_pro">Select a protocol field</string>
+    <string name="nothing_entered">Enter a value above</string>
+
 </resources>

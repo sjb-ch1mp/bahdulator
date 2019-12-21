@@ -63,14 +63,14 @@ public class IPv4Protocols extends ProtocolField {
         super.addValue(57, new Value("SKIP", "SKIP"));
         super.addValue(58, new Value("IPv6-ICMP", "ICMP for IPv6"));
         super.addValue(59, new Value("IPv6-NoNxt", "No Next Header for IPv6"));
-        super.addValue(61, new Value("", "any host internal protocol"));
+        super.addValue(61, new Value("any host internal protocol", "any host internal protocol"));
         super.addValue(62, new Value("CFTP", "CFTP"));
-        super.addValue(63, new Value("", "any local network"));
+        super.addValue(63, new Value("any local network", "any local network"));
         super.addValue(64, new Value("SAT-EXPAK", "SATNET and Backroom EXPAK"));
         super.addValue(65, new Value("KRYPTOLAN", "Kryptolan"));
         super.addValue(66, new Value("RVD", "MIT Remote Virtual Disk Protocol"));
         super.addValue(67, new Value("IPPC", "Internet Pluribus Packet Core"));
-        super.addValue(68, new Value("", "any distributed file system"));
+        super.addValue(68, new Value("any distributed file system", "any distributed file system"));
         super.addValue(69, new Value("SAT-MON", "SATNET Monitoring"));
         super.addValue(70, new Value("VISA", "VISA Protocol"));
         super.addValue(71, new Value("IPCV", "Internet Packet Core Utility"));
@@ -102,7 +102,7 @@ public class IPv4Protocols extends ProtocolField {
         super.addValue(96, new Value("SCC-SP", "Semaphore Communications Sec. Pro."));
         super.addValue(97, new Value("ETHERIP", "Ethernet-within-IP Encapsulation"));
         super.addValue(98, new Value("ENCAP", "Encapsulation Header"));
-        super.addValue(99, new Value("", "any private encryption scheme"));
+        super.addValue(99, new Value("any private encryption scheme", "any private encryption scheme"));
         super.addValue(100, new Value("GMTP", "GMTP"));
         super.addValue(101, new Value("IFMP", "Ipsilon Flow Management Protocol"));
         super.addValue(102, new Value("PNNI", "PNNI over IP"));
@@ -117,7 +117,7 @@ public class IPv4Protocols extends ProtocolField {
         super.addValue(111, new Value("IPX-in-IP", "IPX in IP"));
         super.addValue(112, new Value("VRRP", "Virtual Router Redundancy Protocol"));
         super.addValue(113, new Value("PGM", "PGM Reliable Transport Protocol"));
-        super.addValue(114, new Value("", "any 0-hop protocol"));
+        super.addValue(114, new Value("any 0-hop protocol", "any 0-hop protocol"));
         super.addValue(115, new Value("L2TP", "Layer Two Tunneling Protocol"));
         super.addValue(116, new Value("DDX", "D-II Data Exchange (DDX)"));
         super.addValue(117, new Value("IATP", "Interactive Agent Transfer Protocol"));

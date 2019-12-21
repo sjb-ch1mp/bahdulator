@@ -1,8 +1,6 @@
 package ch1mp.bahdulator;
 
-import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
-import android.hardware.input.InputManager;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -152,6 +150,7 @@ class InputHandler {
         etDec.setText(converter.convertToDecimal());
         etHex.setText(converter.convertToHexadecimal());
 
+        ((MainActivity) context).getProtocolHandler().doProtocolSearch();
         ((MainActivity) context).setActiveValue(Integer.parseInt(converter.convertToDecimal()));
 
         clearFocus();
@@ -175,6 +174,8 @@ class InputHandler {
         etAsc.setText("");
         etDec.setText("");
         etBin.setText("");
+        ((MainActivity) context).getProtocolHandler().clearFields();
         ((MainActivity) context).setActiveValue(-1);
     }
+
 }

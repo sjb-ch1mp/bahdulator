@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     InputHandler inputHandler;
     ProtocolHandler protocolHandler;
     int activeValue;
+    String activeProtocol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +37,23 @@ public class MainActivity extends AppCompatActivity {
         );
 
         activeValue = -1;
+        activeProtocol = getString(R.string.dns_opcodes);
     }
 
     public void setActiveValue(int activeValue){
         this.activeValue = activeValue;
     }
+    public void setActiveProtocol(String activeProtocol){
+        this.activeProtocol = activeProtocol;
+    }
 
     public int getActiveValue(){
         return activeValue;
+    }
+    public String getActiveProtocol(){
+        return activeProtocol;
+    }
+    public ProtocolHandler getProtocolHandler(){
+        return protocolHandler;
     }
 }

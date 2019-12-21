@@ -50,7 +50,6 @@
 
         <EditText
             android:id="@+id/editText_bin"
-            style="@style/Widget.AppCompat.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -98,7 +97,6 @@
 
         <EditText
             android:id="@+id/editText_asc"
-            style="@style/Widget.AppCompat.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -146,7 +144,6 @@
 
         <EditText
             android:id="@+id/editText_hex"
-            style="@style/Widget.AppCompat.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -194,7 +191,6 @@
 
         <EditText
             android:id="@+id/editText_dec"
-            style="@style/Widget.AppCompat.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -209,12 +205,58 @@
 
         <Space
             android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_weight="2.5" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@android:color/black"/>
+
+    <LinearLayout
+        android:id="@+id/container_protocol_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.3"
+            android:background="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/textView_pro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorLabel"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/aldrich" />
+
+
+
+        <Space
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2.5" />
     </LinearLayout>
 
+
     <LinearLayout
-        android:id="@+id/container_protocol"
+        android:id="@+id/container_protocol_display"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -225,34 +267,34 @@
             android:layout_weight="2.5" />
 
         <TextView
-            android:id="@+id/textView_pro"
+            android:id="@+id/label_pro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2.3"
-            android:background="@color/colorLabel"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
             android:text="@string/label_pro"
             android:textAlignment="center"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorLabel"
             android:textSize="18sp"
             android:textStyle="bold"
             app:fontFamily="@font/aldrich" />
 
         <EditText
             android:id="@+id/editText_pro"
-            style="@style/Widget.AppCompat.EditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="71dp"
             android:layout_weight="1"
             android:background="@android:color/white"
-            android:inputType="numberDecimal"
+            android:enabled="false"
+            android:hint="@string/hint_select_pro"
+            android:inputType="textMultiLine"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
             android:textColor="@android:color/black"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:typeface="monospace" />
 
         <Space
