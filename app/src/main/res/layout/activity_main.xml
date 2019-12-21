@@ -9,18 +9,38 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/header"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="50dp"
-        android:paddingBottom="30dp"
-        android:text="@string/app_name_caps"
-        android:textAlignment="center"
-        android:textColor="#FF00F2"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:fontFamily="@font/aldrich" />
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:focusable="false"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:text="@string/app_name_caps"
+            android:textAlignment="center"
+            android:textColor="@color/labelPink"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/aldrich" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/container_binary"
@@ -43,7 +63,7 @@
             android:paddingRight="10dp"
             android:text="@string/label_bin"
             android:textAlignment="center"
-            android:textColor="@color/colorLabel"
+            android:textColor="@color/labelGreen"
             android:textSize="18sp"
             android:textStyle="bold"
             app:fontFamily="@font/aldrich" />
@@ -90,7 +110,7 @@
             android:paddingRight="10dp"
             android:text="@string/label_asc"
             android:textAlignment="center"
-            android:textColor="@color/colorLabel"
+            android:textColor="@color/labelGreen"
             android:textSize="18sp"
             android:textStyle="bold"
             app:fontFamily="@font/aldrich" />
@@ -137,7 +157,7 @@
             android:paddingRight="10dp"
             android:text="@string/label_hex"
             android:textAlignment="center"
-            android:textColor="@color/colorLabel"
+            android:textColor="@color/labelGreen"
             android:textSize="18sp"
             android:textStyle="bold"
             app:fontFamily="@font/aldrich" />
@@ -184,7 +204,7 @@
             android:paddingRight="10dp"
             android:text="@string/label_dec"
             android:textAlignment="center"
-            android:textColor="@color/colorLabel"
+            android:textColor="@color/labelGreen"
             android:textSize="18sp"
             android:textStyle="bold"
             app:fontFamily="@font/aldrich" />
@@ -236,7 +256,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorLabel"
+            android:background="@color/labelGreen"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"
@@ -276,7 +296,7 @@
             android:paddingRight="10dp"
             android:text="@string/label_pro"
             android:textAlignment="center"
-            android:textColor="@color/colorLabel"
+            android:textColor="@color/labelGreen"
             android:textSize="18sp"
             android:textStyle="bold"
             app:fontFamily="@font/aldrich" />
@@ -302,22 +322,5 @@
             android:layout_height="match_parent"
             android:layout_weight="2.5" />
     </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.2" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/logo" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
 
 </LinearLayout>

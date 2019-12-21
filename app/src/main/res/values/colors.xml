@@ -3,5 +3,6 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorLabel">#28FF00</color>
+    <color name="labelGreen">#28FF00</color>
+    <color name="labelPink">#FF00F2</color>
 </resources>

@@ -21,8 +21,18 @@
     <string name="ipv6_extension_headers">ipv6.extension_headers</string>
     <string name="tcp_well_known_ports">tcp.well_known_ports</string>
     <string name="udp_well_known_ports">udp.well_known_ports</string>
-    <string name="nothing_found">Nothing found</string>
+    <string name="nothing_found">-</string>
     <string name="hint_select_pro">Select a protocol field</string>
     <string name="nothing_entered">Enter a value above</string>
+
+    <!-- ABOUT FRAGMENT -->
+    <string name="label_version">VERSION |</string>
+    <string name="label_author">AUTHOR |</string>
+    <string name="label_github">GITHUB |</string>
+    <string name="label_date">DATE |</string>
+    <string name="version">0.1</string>
+    <string name="author">Samuel J. Brookes</string>
+    <string name="github">sjb-ch1mp</string>
+    <string name="date">Dec 2019</string>
 
 </resources>

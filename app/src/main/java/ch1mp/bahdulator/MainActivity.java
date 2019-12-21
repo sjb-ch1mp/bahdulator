@@ -3,7 +3,9 @@ package ch1mp.bahdulator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -24,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
         //Boilerplate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Set up AboutFragment
+        ImageView logo = findViewById(R.id.logo);
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AboutFragment af = new AboutFragment();
+                af.show(getSupportFragmentManager(), "AboutFragment");
+            }
+        });
 
         //Set up InputHandler
         inputHandler = new InputHandler(
