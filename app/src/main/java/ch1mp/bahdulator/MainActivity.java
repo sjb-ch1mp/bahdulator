@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * The MainActivity of Bahdulator.
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ */
 public class MainActivity extends AppCompatActivity {
 
     InputHandler inputHandler;
@@ -40,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         activeProtocol = getString(R.string.dns_opcodes);
     }
 
+    /*
+     *  SETTERS
+     */
     public void setActiveValue(int activeValue){
         this.activeValue = activeValue;
     }
@@ -47,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         this.activeProtocol = activeProtocol;
     }
 
+
+    /*
+    *   GETTERS
+    * */
     public int getActiveValue(){
         return activeValue;
     }

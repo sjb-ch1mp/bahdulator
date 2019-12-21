@@ -3,6 +3,14 @@ package ch1mp.bahdulator.protocols.fields;
 import ch1mp.bahdulator.protocols.ProtocolField;
 import ch1mp.bahdulator.protocols.Value;
 
+/**
+ * The container for legal values of the IPv6 Extension Headers (i.e. Next Header field).
+ *
+ * Reference: IANA.org
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ *
+ */
 public class IPv6ExtensionHeaders extends ProtocolField {
 
     public IPv6ExtensionHeaders(){

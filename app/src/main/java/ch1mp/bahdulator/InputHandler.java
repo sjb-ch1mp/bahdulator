@@ -15,8 +15,12 @@ import ch1mp.bahdulator.converters.DecConverter;
 import ch1mp.bahdulator.converters.HexConverter;
 
 /**
- * The InputHandler controls the EditText fields (e.g. switching them on and off depending
- * upon what the user is entering).
+ * The InputHandler controls the behaviour of the fields on the GUI of Bahdulator.
+ * It takes a reference to each of the editable EditTexts in the GUI and adds OnKey- and
+ * OnTouch- Listeners.
+ *
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
  */
 class InputHandler {
 
@@ -33,6 +37,11 @@ class InputHandler {
         setUpOnTouchListeners();
     }
 
+    /**
+     * Attaches an OnKeyListener to each of the EditTexts on the GUI that listens
+     * for an ENTER key press. Once the key ENTER has been pressed, the value from the field
+     * is sent to the appropriate Converter and converted into the three other data types.
+     */
     private void setUpOnKeyListeners(){
 
         etDec.setOnKeyListener(new View.OnKeyListener() {
@@ -101,8 +110,11 @@ class InputHandler {
 
     }
 
+    /**
+     * Attaches an OnTouchListener to each of the EditTexts on the GUI. This ensures that
+     * when the user touches a field to edit it, all of the fields on the screen are cleared.
+     */
     private void setUpOnTouchListeners(){
-
 
         etAsc.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -137,13 +149,33 @@ class InputHandler {
         });
     }
 
+    /**
+     * Takes an exception that is caught by the InputHandler and shows it in a Toast.
+     * If a different exception is thrown - this method assumes that it is because the value
+     * entered is too large.
+     *
+     * @param e - Exception
+     */
     private void showErrorMessage(Exception e){
         clearFields();
         clearFocus();
         ((MainActivity) context).setActiveValue(-1);
-        Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+        if(e instanceof InvalidInputException){
+            Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(context, "Value is too large", Toast.LENGTH_SHORT).show();
+        }
     }
 
+    /**
+     * Takes the converter created when the ENTER key is pressed, and sets the text of
+     * all EditText fields with the appropriate conversion. It then sets the active value
+     * to the value showing in the DEC editText box and searches for the value in the currently
+     * active protocol field.
+     *
+     * @param converter - Converter
+     */
     private void doConversion(Converter converter){
         etAsc.setText(converter.convertToAscii());
         etBin.setText(converter.convertToBinary());
@@ -156,6 +188,9 @@ class InputHandler {
         clearFocus();
     }
 
+    /**
+     * Clears the focus from all boxes and hides the soft input.
+     */
     private void clearFocus(){
 
         etHex.clearFocus();
@@ -169,6 +204,10 @@ class InputHandler {
         }
     }
 
+    /**
+     * Empties the content from all text fields in the GUI and sets the active value to -1
+     * to let other classes know that there is nothing showing on the GUI.
+     */
     private void clearFields(){
         etHex.setText("");
         etAsc.setText("");

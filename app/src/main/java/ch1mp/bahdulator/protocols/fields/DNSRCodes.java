@@ -3,6 +3,14 @@ package ch1mp.bahdulator.protocols.fields;
 import ch1mp.bahdulator.protocols.ProtocolField;
 import ch1mp.bahdulator.protocols.Value;
 
+/**
+ * The container for legal values of the DNS R Code field.
+ *
+ * Reference: IANA.org
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ *
+ */
 public class DNSRCodes extends ProtocolField {
 
     public DNSRCodes(){

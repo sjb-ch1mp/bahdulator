@@ -3,13 +3,20 @@ package ch1mp.bahdulator.converters;
 import ch1mp.bahdulator.InvalidInputException;
 import ch1mp.bahdulator.ascii.AsciiControlChars;
 
+/**
+ * The DecConverter class takes a decimal string and converts it into a binary string,
+ * a hexadecimal string and an ASCII string.
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ */
+
 public class DecConverter extends Converter {
 
     private String rawInput;
-    private int input;
+    private long input;
 
     public DecConverter(String input) throws InvalidInputException {
-        this.input = Integer.parseInt(inputIsValid(input));
+        this.input = Long.parseLong(inputIsValid(input));
         rawInput = input;
     }
 
@@ -21,12 +28,12 @@ public class DecConverter extends Converter {
 
     @Override
     public String convertToHexadecimal() {
-        return "0x" + Integer.toHexString(input).toUpperCase();
+        return "0x" + Long.toHexString(input).toUpperCase();
     }
 
     @Override
     public String convertToBinary() {
-        String binStr = Integer.toBinaryString(input);
+        String binStr = Long.toBinaryString(input);
         while(binStr.length() % 8 != 0){
             binStr = "0" + binStr;
         }

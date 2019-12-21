@@ -3,6 +3,14 @@ package ch1mp.bahdulator.protocols.fields;
 import ch1mp.bahdulator.protocols.ProtocolField;
 import ch1mp.bahdulator.protocols.Value;
 
+/**
+ * The container for legal values of the DNS RR Type field.
+ *
+ * Reference: IANA.org
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ *
+ */
 public class DNSRRTypes extends ProtocolField {
 
     public DNSRRTypes(){

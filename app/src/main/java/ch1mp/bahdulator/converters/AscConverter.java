@@ -2,10 +2,16 @@ package ch1mp.bahdulator.converters;
 
 import ch1mp.bahdulator.InvalidInputException;
 
+/**
+ * The AscConverter class takes an ASCII string and converts it into a binary string,
+ * a hexadecimal string and a decimal string.
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ */
 public class AscConverter extends Converter {
 
     private String rawInput;
-    private int input;
+    private long input;
 
     public AscConverter(String input) throws InvalidInputException {
         this.input = (int) inputIsValid(input).charAt(0);
@@ -22,12 +28,12 @@ public class AscConverter extends Converter {
 
     @Override
     public String convertToHexadecimal() {
-        return "0x" + Integer.toHexString(input).toUpperCase();
+        return "0x" + Long.toHexString(input).toUpperCase();
     }
 
     @Override
     public String convertToBinary() {
-        String binStr = Integer.toBinaryString(input);
+        String binStr = Long.toBinaryString(input);
         while(binStr.length() % 8 != 0){
             binStr = "0" + binStr;
         }

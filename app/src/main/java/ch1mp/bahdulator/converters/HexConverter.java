@@ -3,14 +3,20 @@ package ch1mp.bahdulator.converters;
 import ch1mp.bahdulator.InvalidInputException;
 import ch1mp.bahdulator.ascii.AsciiControlChars;
 
+/**
+ * The HexConverter class takes a hexadecimal string and converts it into a binary string,
+ * a decimal string and an ASCII string.
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ */
 public class HexConverter extends Converter {
 
     private String rawInput;
-    private int input;
+    private long input;
 
     public HexConverter(String input) throws InvalidInputException {
         if(input.matches("^0x")) input = input.substring(2);
-        this.input = Integer.parseInt(inputIsValid(input), 16);
+        this.input = Long.parseLong(inputIsValid(input), 16);
         rawInput = input;
     }
 
@@ -28,7 +34,7 @@ public class HexConverter extends Converter {
 
     @Override
     public String convertToBinary() {
-        String binStr = Integer.toBinaryString(input);
+        String binStr = Long.toBinaryString(input);
         while(binStr.length() % 8 != 0){
             binStr = "0" + binStr;
         }

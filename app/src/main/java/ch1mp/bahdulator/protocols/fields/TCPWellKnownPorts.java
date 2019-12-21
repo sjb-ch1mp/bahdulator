@@ -3,6 +3,14 @@ package ch1mp.bahdulator.protocols.fields;
 import ch1mp.bahdulator.protocols.Value;
 import ch1mp.bahdulator.protocols.ProtocolField;
 
+/**
+ * The container for TCP Well Known ports
+ *
+ * Reference: IANA.org
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ *
+ */
 public class TCPWellKnownPorts extends ProtocolField {
 
     public TCPWellKnownPorts(){

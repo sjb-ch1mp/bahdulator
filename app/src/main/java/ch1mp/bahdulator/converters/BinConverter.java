@@ -3,13 +3,19 @@ package ch1mp.bahdulator.converters;
 import ch1mp.bahdulator.InvalidInputException;
 import ch1mp.bahdulator.ascii.AsciiControlChars;
 
+/**
+ * The BinConverter class takes a binary string and converts it into a decimal string,
+ * a hexadecimal string and an ascii string.
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
+ */
 public class BinConverter extends Converter {
 
     private String rawInput;
-    private int input;
+    private long input;
 
     public BinConverter(String input) throws InvalidInputException {
-        this.input = Integer.parseInt(inputIsValid(input), 2);
+        this.input = Long.parseLong(inputIsValid(input), 2);
         rawInput = input;
     }
 
@@ -21,7 +27,7 @@ public class BinConverter extends Converter {
 
     @Override
     public String convertToHexadecimal() {
-        return "0x" + Integer.toHexString(input).toUpperCase();
+        return "0x" + Long.toHexString(input).toUpperCase();
     }
 
     @Override

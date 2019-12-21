@@ -1,7 +1,12 @@
 package ch1mp.bahdulator.ascii;
 
 /**
+ * The AsciiControlChars enum contains all ASCII control characters (ACC), in order to make them
+ * easily retrievable and human readable. Each ACC has a value and a label.
+ *
  * Reference : www.asciitable.com
+ *
+ * @author Samuel J. Brookes (sjb-ch1mp)
  */
 
 public enum AsciiControlChars {
@@ -41,10 +46,10 @@ public enum AsciiControlChars {
     SPC(32, "SPACE"),
     DEL(127, "DELETE");
 
-    int val;
+    long val;
     String label;
 
-    AsciiControlChars(int val, String label){
+    AsciiControlChars(long val, String label){
         this.val = val;
         this.label = label;
     }
@@ -53,7 +58,7 @@ public enum AsciiControlChars {
         return label;
     }
 
-    public static AsciiControlChars getControlChar(int i){
+    public static AsciiControlChars getControlChar(long i){
         for(AsciiControlChars a : AsciiControlChars.values()){
             if(a.val == i){
                 return a;
