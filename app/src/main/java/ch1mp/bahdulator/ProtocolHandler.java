@@ -62,8 +62,6 @@ class ProtocolHandler {
     public void doProtocolSearch(){
 
         String activeProtocol = ((MainActivity) context).getActiveProtocol();
-        menuAnchor.setText(activeProtocol);
-
         ProtocolField pf = getProtocolField(activeProtocol);
         if(pf != null){
             Value value = pf.getFieldValue(((MainActivity) context).getActiveValue());
