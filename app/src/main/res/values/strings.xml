@@ -30,7 +30,7 @@
     <string name="label_author">AUTHOR |</string>
     <string name="label_github">GITHUB |</string>
     <string name="label_date">DATE |</string>
-    <string name="version">0.1</string>
+    <string name="version">1.0</string>
     <string name="author">Samuel J. Brookes</string>
     <string name="github">sjb-ch1mp</string>
     <string name="date">Dec 2019</string>
