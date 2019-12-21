@@ -46,7 +46,7 @@ class ProtocolHandler {
                 if(((MainActivity) context).getActiveValue() == -1){
                     display.setText(R.string.nothing_entered);
                 }else{
-                    doProtocolSearch();
+                    doProtocolSearch(((MainActivity) context).getActiveProtocol());
                 }
                 return false;
             }
@@ -59,9 +59,8 @@ class ProtocolHandler {
         });
     }
 
-    public void doProtocolSearch(){
+    public void doProtocolSearch(String activeProtocol){
 
-        String activeProtocol = ((MainActivity) context).getActiveProtocol();
         ProtocolField pf = getProtocolField(activeProtocol);
         if(pf != null){
             Value value = pf.getFieldValue(((MainActivity) context).getActiveValue());

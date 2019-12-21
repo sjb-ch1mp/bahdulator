@@ -150,8 +150,8 @@ class InputHandler {
         etDec.setText(converter.convertToDecimal());
         etHex.setText(converter.convertToHexadecimal());
 
-        ((MainActivity) context).getProtocolHandler().doProtocolSearch();
         ((MainActivity) context).setActiveValue(Integer.parseInt(converter.convertToDecimal()));
+        ((MainActivity) context).getProtocolHandler().doProtocolSearch(((MainActivity) context).getActiveProtocol());
 
         clearFocus();
     }
