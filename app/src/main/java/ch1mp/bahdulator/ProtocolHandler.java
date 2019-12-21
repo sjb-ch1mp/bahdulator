@@ -65,11 +65,20 @@ class ProtocolHandler {
         ProtocolField pf = getProtocolField(activeProtocol);
         if(pf != null){
             Value value = pf.getFieldValue(((MainActivity) context).getActiveValue());
-            if(value != null){
-                if(!value.getId().equals(value.getDescription()))
-                    display.setText(value.getId() + ": " + value.getDescription());
-                else
+            if(value != null) {
+                if (!value.getId().equals(value.getDescription())){
+
+                    if(value.getId().equals("")){
+                        display.setText(value.getDescription());
+                    }else if(value.getDescription().equals("")){
+                        display.setText(value.getId());
+                    }else{
+                        display.setText(value.getId() + ": " + value.getDescription());
+                    }
+                }
+                else{
                     display.setText(value.getId());
+                }
             }
             else display.setText(R.string.nothing_found);
         }
@@ -86,6 +95,8 @@ class ProtocolHandler {
         protocolFields.add(new IPv4Options());
         protocolFields.add(new IPv4Protocols());
         protocolFields.add(new IPv6ExtensionHeaders());
+        protocolFields.add(new TCPWellKnownPorts());
+        protocolFields.add(new UDPWellKnownPorts());
     }
 
     private ProtocolField getProtocolField(String name){

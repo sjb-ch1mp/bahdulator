@@ -39,10 +39,10 @@
         />
     <item
         android:id="@+id/tcp_common_ports"
-        android:title="@string/tcp_common_ports"
+        android:title="@string/tcp_well_known_ports"
         />
     <item
         android:id="@+id/udp_common_ports"
-        android:title="@string/udp_common_ports"
+        android:title="@string/udp_well_known_ports"
         />
 </menu>
