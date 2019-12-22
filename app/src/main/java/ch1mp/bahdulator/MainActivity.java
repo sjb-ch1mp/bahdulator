@@ -80,4 +80,7 @@ public class MainActivity extends AppCompatActivity {
     public ProtocolHandler getProtocolHandler(){
         return protocolHandler;
     }
+    public InputHandler getInputHandler(){
+        return inputHandler;
+    }
 }

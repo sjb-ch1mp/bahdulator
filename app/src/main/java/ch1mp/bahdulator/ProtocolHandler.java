@@ -58,6 +58,7 @@ class ProtocolHandler {
         menuAnchor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((MainActivity) context).getInputHandler().hideSoftInput();
                 protocolMenu.show();
             }
         });

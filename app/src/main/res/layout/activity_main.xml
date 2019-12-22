@@ -225,7 +225,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="match_parent"
             android:layout_weight="2.5" />
     </LinearLayout>
 
@@ -304,7 +304,7 @@
         <EditText
             android:id="@+id/editText_pro"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="100dp"
             android:layout_weight="1"
             android:background="@android:color/white"
             android:enabled="false"

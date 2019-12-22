@@ -189,7 +189,7 @@ class InputHandler {
     }
 
     /**
-     * Clears the focus from all boxes and hides the soft input.
+     * Clears the focus from all boxes.
      */
     private void clearFocus(){
 
@@ -197,7 +197,14 @@ class InputHandler {
         etAsc.clearFocus();
         etDec.clearFocus();
         etBin.clearFocus();
+        hideSoftInput();
 
+    }
+
+    /**
+     * Hides the keyboard if it is showing
+     */
+    public void hideSoftInput(){
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         if(imm != null){
             imm.hideSoftInputFromWindow(etHex.getWindowToken(), 0);
