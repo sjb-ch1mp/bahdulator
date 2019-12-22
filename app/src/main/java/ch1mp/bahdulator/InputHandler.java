@@ -156,7 +156,7 @@ class InputHandler {
      *
      * @param e - Exception
      */
-    private void showErrorMessage(Exception e){
+    public void showErrorMessage(Exception e){
         clearFields();
         clearFocus();
         ((MainActivity) context).setActiveValue(-1);
@@ -176,7 +176,8 @@ class InputHandler {
      *
      * @param converter - Converter
      */
-    private void doConversion(Converter converter){
+    public void doConversion(Converter converter){
+
         etAsc.setText(converter.convertToAscii());
         etBin.setText(converter.convertToBinary());
         etDec.setText(converter.convertToDecimal());

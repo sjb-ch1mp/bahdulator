@@ -229,10 +229,56 @@
             android:layout_weight="2.5" />
     </LinearLayout>
 
-    <Space
+    <LinearLayout
+        android:id="@+id/container_plus_minus"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@android:color/black"/>
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4" />
+
+        <ImageView
+            android:id="@+id/btn_increment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:focusable="false"
+            android:scaleType="centerInside"
+            android:textAlignment="center"
+            android:textColor="@color/labelPink"
+            android:textSize="30sp"
+            app:fontFamily="@font/aldrich"
+            app:srcCompat="@drawable/btn_increment" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btn_decrement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:focusable="false"
+            android:scaleType="centerInside"
+            android:textAlignment="center"
+            android:textColor="@color/labelPink"
+            android:textSize="30sp"
+            app:fontFamily="@font/aldrich"
+            app:srcCompat="@drawable/btn_decrement" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/container_protocol_button"
@@ -265,7 +311,6 @@
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontFamily="@font/aldrich" />
-
 
 
         <Space
@@ -321,6 +366,57 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2.5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_up_down"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4" />
+
+        <ImageView
+            android:id="@+id/btn_up"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:focusable="false"
+            android:scaleType="centerInside"
+            android:textAlignment="center"
+            android:textColor="@color/labelPink"
+            android:textSize="30sp"
+            app:fontFamily="@font/aldrich"
+            app:srcCompat="@drawable/btn_up" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btn_down"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/black"
+            android:focusable="false"
+            android:scaleType="centerInside"
+            android:textAlignment="center"
+            android:textColor="@color/labelPink"
+            android:textSize="30sp"
+            app:fontFamily="@font/aldrich"
+            app:srcCompat="@drawable/btn_down" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
     </LinearLayout>
 
 </LinearLayout>

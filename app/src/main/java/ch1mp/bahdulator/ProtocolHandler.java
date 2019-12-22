@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import ch1mp.bahdulator.converters.DecConverter;
 import ch1mp.bahdulator.protocols.ProtocolField;
 import ch1mp.bahdulator.protocols.Value;
 import ch1mp.bahdulator.protocols.fields.*;
@@ -78,20 +79,72 @@ class ProtocolHandler {
         if(pf != null){
             Value value = pf.getFieldValue(((MainActivity) context).getActiveValue());
             if(value != null) {
-                if (!value.getId().equals(value.getDescription())){
-                    if(value.getId().equals("")){
-                        display.setText(value.getDescription());
-                    }else if(value.getDescription().equals("")){
-                        display.setText(value.getId());
-                    }else{
-                        display.setText(value.getId() + ": " + value.getDescription());
-                    }
-                }
-                else{
-                    display.setText(value.getId());
-                }
+                displayProtocolDetails(value);
             }
             else display.setText(R.string.nothing_found);
+        }
+    }
+
+    public void searchForNextValue(String activeProtocol, int activeValue, boolean up) throws NothingFoundException {
+
+        ProtocolField pf = getProtocolField(activeProtocol);
+        Value value = null;
+        boolean altered = false;
+
+        //reset activeValue to within the bounds of the active protocol's values
+        if(!up && activeValue > pf.getMax()){
+            activeValue = pf.getMax() + 1;
+            altered = true;
+        }
+        else if(up && activeValue < pf.getMin()){
+            activeValue = pf.getMin() - 1;
+            altered = true;
+        }
+
+        //search for the next value
+        while(altered || (activeValue >= pf.getMin() && activeValue <= pf.getMax())){
+
+            if(altered) altered = false;
+
+            if(up) activeValue++;
+            else activeValue--;
+
+            if((value = pf.getFieldValue(activeValue)) != null) break;
+        }
+
+        //if something was found
+        if(value != null){
+
+            ((MainActivity) context).setActiveValue(activeValue);
+
+            try{
+                ((MainActivity) context).getInputHandler().doConversion(new DecConverter(String.valueOf(activeValue)));
+            }catch(Exception e){
+                ((MainActivity) context).getInputHandler().showErrorMessage(e);
+            }
+
+        } else {
+            //revert the last change
+            if(up)activeValue--;
+            else activeValue++;
+
+            //throw an exception
+            throw new NothingFoundException(pf.getName() + " has no legal values " + ((up)?"above " + pf.getMax():"below " + pf.getMin()));
+        }
+    }
+
+    private void displayProtocolDetails(Value value){
+        if (!value.getId().equals(value.getDescription())){
+            if(value.getId().equals("")){
+                display.setText(value.getDescription());
+            }else if(value.getDescription().equals("")){
+                display.setText(value.getId());
+            }else{
+                display.setText(value.getId() + ": " + value.getDescription());
+            }
+        }
+        else{
+            display.setText(value.getId());
         }
     }
 

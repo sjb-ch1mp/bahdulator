@@ -13,10 +13,10 @@ import ch1mp.bahdulator.ascii.AsciiControlChars;
 public class DecConverter extends Converter {
 
     private String rawInput;
-    private long input;
+    private int input;
 
     public DecConverter(String input) throws InvalidInputException {
-        this.input = Long.parseLong(inputIsValid(input));
+        this.input = Integer.parseInt(inputIsValid(input));
         rawInput = input;
     }
 
@@ -28,12 +28,12 @@ public class DecConverter extends Converter {
 
     @Override
     public String convertToHexadecimal() {
-        return "0x" + Long.toHexString(input).toUpperCase();
+        return "0x" + Integer.toHexString(input).toUpperCase();
     }
 
     @Override
     public String convertToBinary() {
-        String binStr = Long.toBinaryString(input);
+        String binStr = Integer.toBinaryString(input);
         while(binStr.length() % 8 != 0){
             binStr = "0" + binStr;
         }

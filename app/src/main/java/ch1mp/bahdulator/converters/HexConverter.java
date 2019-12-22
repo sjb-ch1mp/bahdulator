@@ -12,11 +12,11 @@ import ch1mp.bahdulator.ascii.AsciiControlChars;
 public class HexConverter extends Converter {
 
     private String rawInput;
-    private long input;
+    private int input;
 
     public HexConverter(String input) throws InvalidInputException {
         if(input.matches("^0x")) input = input.substring(2);
-        this.input = Long.parseLong(inputIsValid(input), 16);
+        this.input = Integer.parseInt(inputIsValid(input), 16);
         rawInput = input;
     }
 
@@ -34,7 +34,7 @@ public class HexConverter extends Converter {
 
     @Override
     public String convertToBinary() {
-        String binStr = Long.toBinaryString(input);
+        String binStr = Integer.toBinaryString(input);
         while(binStr.length() % 8 != 0){
             binStr = "0" + binStr;
         }

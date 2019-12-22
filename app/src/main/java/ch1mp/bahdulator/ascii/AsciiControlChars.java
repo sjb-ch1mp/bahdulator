@@ -46,10 +46,10 @@ public enum AsciiControlChars {
     SPC(32, "SPACE"),
     DEL(127, "DELETE");
 
-    long val;
+    int val;
     String label;
 
-    AsciiControlChars(long val, String label){
+    AsciiControlChars(int val, String label){
         this.val = val;
         this.label = label;
     }
@@ -58,7 +58,7 @@ public enum AsciiControlChars {
         return label;
     }
 
-    public static AsciiControlChars getControlChar(long i){
+    public static AsciiControlChars getControlChar(int i){
         for(AsciiControlChars a : AsciiControlChars.values()){
             if(a.val == i){
                 return a;

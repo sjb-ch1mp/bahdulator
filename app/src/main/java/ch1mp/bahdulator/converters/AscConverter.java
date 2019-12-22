@@ -11,7 +11,7 @@ import ch1mp.bahdulator.InvalidInputException;
 public class AscConverter extends Converter {
 
     private String rawInput;
-    private long input;
+    private int input;
 
     public AscConverter(String input) throws InvalidInputException {
         this.input = (int) inputIsValid(input).charAt(0);
@@ -28,12 +28,12 @@ public class AscConverter extends Converter {
 
     @Override
     public String convertToHexadecimal() {
-        return "0x" + Long.toHexString(input).toUpperCase();
+        return "0x" + Integer.toHexString(input).toUpperCase();
     }
 
     @Override
     public String convertToBinary() {
-        String binStr = Long.toBinaryString(input);
+        String binStr = Integer.toBinaryString(input);
         while(binStr.length() % 8 != 0){
             binStr = "0" + binStr;
         }

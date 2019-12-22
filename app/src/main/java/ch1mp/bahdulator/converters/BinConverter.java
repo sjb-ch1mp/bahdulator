@@ -12,10 +12,10 @@ import ch1mp.bahdulator.ascii.AsciiControlChars;
 public class BinConverter extends Converter {
 
     private String rawInput;
-    private long input;
+    private int input;
 
     public BinConverter(String input) throws InvalidInputException {
-        this.input = Long.parseLong(inputIsValid(input), 2);
+        this.input = Integer.parseInt(inputIsValid(input), 2);
         rawInput = input;
     }
 

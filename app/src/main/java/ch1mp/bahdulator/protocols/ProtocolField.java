@@ -14,8 +14,12 @@ public abstract class ProtocolField {
 
     private String name;
     private HashMap<Integer, Value> values;
+    private int min;
+    private int max;
 
     public ProtocolField(String name){
+        min = Integer.MAX_VALUE;
+        max = Integer.MIN_VALUE;
         this.name = name;
         values = new HashMap<>(0);
     }
@@ -27,6 +31,9 @@ public abstract class ProtocolField {
      * @param value - the meaning of the legal value
      */
     public void addValue(int key, Value value){
+        if(key < min) min = key;
+        if(key > max) max = key;
+
         values.put(key, value);
     }
 
@@ -48,4 +55,7 @@ public abstract class ProtocolField {
     public String getName(){
         return name;
     }
+
+    public int getMin(){ return min; }
+    public int getMax(){ return max; }
 }

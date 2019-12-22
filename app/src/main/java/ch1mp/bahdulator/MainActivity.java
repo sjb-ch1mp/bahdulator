@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import ch1mp.bahdulator.converters.DecConverter;
 
 /**
  * The MainActivity of Bahdulator.
@@ -19,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     ProtocolHandler protocolHandler;
     int activeValue;
     String activeProtocol;
+    ImageView btnUp;
+    ImageView btnDown;
+    ImageView btnInc;
+    ImageView btnDec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +60,78 @@ public class MainActivity extends AppCompatActivity {
                 (EditText) findViewById(R.id.editText_pro)
         );
 
-        activeValue = -1;
+        setUpButtons();
+
+        activeValue = 0;
         activeProtocol = getString(R.string.dns_opcodes);
+
+        try{inputHandler.doConversion(new DecConverter(String.valueOf(activeValue)));}
+        catch(Exception e){ /*do nothing*/}
+    }
+
+    private void setUpButtons(){
+
+        btnUp = findViewById(R.id.btn_up);
+        btnDown = findViewById(R.id.btn_down);
+        btnInc = findViewById(R.id.btn_increment);
+        btnDec = findViewById(R.id.btn_decrement);
+
+        btnInc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(activeValue == Integer.MAX_VALUE){
+                    showToast("Already at maximum value");
+                }else{
+                    try{
+                        inputHandler.doConversion(new DecConverter(String.valueOf(activeValue + 1)));
+                    }catch(Exception e){
+                        showToast(e.toString());
+                    }
+                }
+            }
+        });
+
+        btnDec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(activeValue <= 0){
+                    showToast("Already at minimum value");
+                }else{
+                    try{
+                        inputHandler.doConversion(new DecConverter(String.valueOf(activeValue - 1)));
+                    }catch(Exception e){
+                        showToast(e.toString());
+                    }
+                }
+            }
+        });
+
+        btnUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    protocolHandler.searchForNextValue(activeProtocol, activeValue, true);
+                }catch(Exception e){
+                    showToast(e.toString());
+                }
+            }
+        });
+
+        btnDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    protocolHandler.searchForNextValue(activeProtocol, activeValue, false);
+                }catch(Exception e){
+                    showToast(e.toString());
+                }
+            }
+        });
+    }
+
+    private void showToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     /*
