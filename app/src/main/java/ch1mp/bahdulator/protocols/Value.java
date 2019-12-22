@@ -18,10 +18,10 @@ public class Value {
     }
 
     public String getId() {
-        return id;
+        return id.toUpperCase();
     }
 
     public String getDescription() {
-        return description;
+        return description.toUpperCase();
     }
 }

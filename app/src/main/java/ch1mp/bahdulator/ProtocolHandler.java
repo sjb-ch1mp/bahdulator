@@ -175,10 +175,10 @@ class ProtocolHandler {
             return new IPv4Protocols();
         }else if(name.equals(context.getString(R.string.ipv6_extension_headers))){
             return new IPv6ExtensionHeaders();
-        }else if(name.equals(context.getString(R.string.tcp_well_known_ports))){
-            return new TCPWellKnownPorts();
-        }else if(name.equals(context.getString(R.string.udp_well_known_ports))){
-            return new UDPWellKnownPorts();
+        }else if(name.equals(context.getString(R.string.tcp_system_ports))){
+            return new TCPSystemPorts();
+        }else if(name.equals(context.getString(R.string.udp_system_ports))){
+            return new UDPSystemPorts();
         }else return null;
     }
 

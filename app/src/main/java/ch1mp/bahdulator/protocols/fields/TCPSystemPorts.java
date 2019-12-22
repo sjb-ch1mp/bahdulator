@@ -11,19 +11,28 @@ import ch1mp.bahdulator.protocols.ProtocolField;
  * @author Samuel J. Brookes (sjb-ch1mp)
  *
  */
-public class TCPWellKnownPorts extends ProtocolField {
+public class TCPSystemPorts extends ProtocolField {
 
-    public TCPWellKnownPorts(){
-        super("tcp.well_known_ports");
+    public TCPSystemPorts(){
+        super("tcp.system_ports");
 
+        super.addValue(0, new Value("Reserved", ""));
         super.addValue(1, new Value("tcpmux", "TCP Port Service Multiplexer"));
         super.addValue(2, new Value("compressnet", "Management Utility"));
         super.addValue(3, new Value("compressnet", "Compression Process"));
+        super.addValue(4, new Value("Unassigned", ""));
         super.addValue(5, new Value("rje", "Remote Job Entry"));
+        super.addValue(6, new Value("Unassigned", ""));
         super.addValue(7, new Value("echo", "Echo"));
+        super.addValue(8, new Value("Unassigned", ""));
         super.addValue(9, new Value("discard", "Discard"));
+        super.addValue(10, new Value("Unassigned", ""));
         super.addValue(11, new Value("systat", "Active Users"));
+        super.addValue(12, new Value("Unassigned", ""));
         super.addValue(13, new Value("daytime", "Daytime"));
+        super.addValue(14, new Value("Unassigned", ""));
+        super.addValue(15, new Value("Unassigned [was netstat]", ""));
+        super.addValue(16, new Value("Unassigned", ""));
         super.addValue(17, new Value("qotd", "Quote of the Day"));
         super.addValue(18, new Value("msp", "Message Send Protocol (historic)"));
         super.addValue(19, new Value("chargen", "Character Generator"));
@@ -31,16 +40,23 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(21, new Value("ftp", "File Transfer Protocol [Control]"));
         super.addValue(22, new Value("ssh", "The Secure Shell (SSH) Protocol"));
         super.addValue(23, new Value("telnet", "Telnet"));
-        super.addValue(24, new Value("", "any private mail system"));
+        super.addValue(24, new Value("any private mail system", ""));
         super.addValue(25, new Value("smtp", "Simple Mail Transfer"));
+        super.addValue(26, new Value("Unassigned", ""));
         super.addValue(27, new Value("nsw-fe", "NSW User System FE"));
+        super.addValue(28, new Value("Unassigned", ""));
         super.addValue(29, new Value("msg-icp", "MSG ICP"));
+        super.addValue(30, new Value("Unassigned", ""));
         super.addValue(31, new Value("msg-auth", "MSG Authentication"));
+        super.addValue(32, new Value("Unassigned", ""));
         super.addValue(33, new Value("dsp", "Display Support Protocol"));
-        super.addValue(35, new Value("", "any private printer server"));
+        super.addValue(34, new Value("Unassigned", ""));
+        super.addValue(35, new Value("any private printer server", ""));
+        super.addValue(36, new Value("Unassigned", ""));
         super.addValue(37, new Value("time", "Time"));
         super.addValue(38, new Value("rap", "Route Access Protocol"));
         super.addValue(39, new Value("rlp", "Resource Location Protocol"));
+        super.addValue(40, new Value("Unassigned", ""));
         super.addValue(41, new Value("graphics", "Graphics"));
         super.addValue(42, new Value("name", "Host Name Server"));
         super.addValue(42, new Value("nameserver", "Host Name Server"));
@@ -48,7 +64,7 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(44, new Value("mpm-flags", "MPM FLAGS Protocol"));
         super.addValue(45, new Value("mpm", "Message Processing Module [recv]"));
         super.addValue(46, new Value("mpm-snd", "MPM [default send]"));
-        super.addValue(47, new Value("", "Reserved"));
+        super.addValue(47, new Value("Reserved", ""));
         super.addValue(48, new Value("auditd", "Digital Audit Daemon"));
         super.addValue(49, new Value("tacacs", "Login Host Protocol (TACACS)"));
         super.addValue(50, new Value("re-mail-ck", "Remote Mail Checking Protocol"));
@@ -57,10 +73,11 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(54, new Value("xns-ch", "XNS Clearinghouse"));
         super.addValue(55, new Value("isi-gl", "ISI Graphics Language"));
         super.addValue(56, new Value("xns-auth", "XNS Authentication"));
-        super.addValue(57, new Value("", "any private terminal access"));
+        super.addValue(57, new Value("any private terminal access", ""));
         super.addValue(58, new Value("xns-mail", "XNS Mail"));
-        super.addValue(59, new Value("", "any private file service"));
-        super.addValue(61, new Value("", "Reserved"));
+        super.addValue(59, new Value("any private file service", ""));
+        super.addValue(60, new Value("Unassigned", ""));
+        super.addValue(61, new Value("Reserved", ""));
         super.addValue(62, new Value("acas", "ACA Services"));
         super.addValue(63, new Value("whoispp", "whois++"));
         super.addValue(63, new Value("whois++", "whois++"));
@@ -76,9 +93,9 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(72, new Value("netrjs-2", "Remote Job Service"));
         super.addValue(73, new Value("netrjs-3", "Remote Job Service"));
         super.addValue(74, new Value("netrjs-4", "Remote Job Service"));
-        super.addValue(75, new Value("", "any private dial out service"));
+        super.addValue(75, new Value("any private dial out service", ""));
         super.addValue(76, new Value("deos", "Distributed External Object Store"));
-        super.addValue(77, new Value("", "any private RJE service"));
+        super.addValue(77, new Value("any private RJE service", ""));
         super.addValue(78, new Value("vettcp", "vettcp"));
         super.addValue(79, new Value("finger", "Finger"));
         super.addValue(80, new Value("http", "World Wide Web HTTP"));
@@ -89,7 +106,7 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(84, new Value("ctf", "Common Trace Facility"));
         super.addValue(85, new Value("mit-ml-dev", "MIT ML Device"));
         super.addValue(86, new Value("mfcobol", "Micro Focus Cobol"));
-        super.addValue(87, new Value("", "any private terminal link"));
+        super.addValue(87, new Value("any private terminal link", ""));
         super.addValue(88, new Value("kerberos", "Kerberos"));
         super.addValue(89, new Value("su-mit-tg", "SU/MIT Telnet Gateway"));
         super.addValue(90, new Value("dnsix", "DNSIX Securit Attribute Token Map"));
@@ -251,8 +268,8 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(267, new Value("td-service", "Tobit David Service Layer"));
         super.addValue(268, new Value("td-replica", "Tobit David Replica"));
         super.addValue(269, new Value("manet", "MANET Protocols"));
-        super.addValue(270, new Value("", "Reserved"));
-        super.addValue(271, new Value("pt-tls", "pt-tls"));
+        super.addValue(270, new Value("Reserved", ""));
+        super.addValue(271, new Value("pt-tls", "IETF Network Endpoint Assessment (NEA) Posture Transport Protocol over TLS (PT-TLS)"));
         super.addValue(280, new Value("http-mgmt", "http-mgmt"));
         super.addValue(281, new Value("personal-link", "Personal Link"));
         super.addValue(282, new Value("cableport-ax", "Cable Port A/X"));
@@ -365,7 +382,9 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(425, new Value("icad-el", "ICAD"));
         super.addValue(426, new Value("smartsdp", "smartsdp"));
         super.addValue(427, new Value("svrloc", "Server Location"));
+        super.addValue(428, new Value("ocs-cmu", "OCS_CMU"));
         super.addValue(428, new Value("ocs_cmu", "OCS_CMU"));
+        super.addValue(429, new Value("ocs-amu", "OCS_AMU"));
         super.addValue(429, new Value("ocs_amu", "OCS_AMU"));
         super.addValue(430, new Value("utmpsd", "UTMPSD"));
         super.addValue(431, new Value("utmpcd", "UTMPCD"));
@@ -451,12 +470,12 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(509, new Value("snare", "snare"));
         super.addValue(510, new Value("fcp", "FirstClass Protocol"));
         super.addValue(511, new Value("passgo", "PassGo"));
-        super.addValue(512, new Value("exec", "exec"));
-        super.addValue(513, new Value("login", "login"));
-        super.addValue(514, new Value("shell", "shell"));
+        super.addValue(512, new Value("exec", "remote process execution"));
+        super.addValue(513, new Value("login", "remote login a la telnet"));
+        super.addValue(514, new Value("shell", "but automatic authentication is performed as for login server"));
         super.addValue(515, new Value("printer", "spooler"));
         super.addValue(516, new Value("videotex", "videotex"));
-        super.addValue(517, new Value("talk", "talk"));
+        super.addValue(517, new Value("talk", "a rendezvous port from which a tcp connection is established"));
         super.addValue(518, new Value("ntalk", "ntalk"));
         super.addValue(519, new Value("utime", "unixtime"));
         super.addValue(520, new Value("efs", "extended file name server"));
@@ -603,11 +622,11 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(661, new Value("hap", "HAP"));
         super.addValue(662, new Value("pftp", "PFTP"));
         super.addValue(663, new Value("purenoise", "PureNoise"));
-        super.addValue(664, new Value("oob-ws-https", "oob-ws-https"));
+        super.addValue(664, new Value("oob-ws-https", "DMTF out-of-band secure web services management protocol"));
         super.addValue(665, new Value("sun-dr", "Sun DR"));
         super.addValue(666, new Value("mdqs", "mdqs"));
         super.addValue(666, new Value("doom", "doom Id Software"));
-        super.addValue(667, new Value("disclose", "disclose"));
+        super.addValue(667, new Value("disclose", "campaign contribution disclosures - SDR Technologies"));
         super.addValue(668, new Value("mecomm", "MeComm"));
         super.addValue(669, new Value("meregister", "MeRegister"));
         super.addValue(670, new Value("vacdsm-sws", "VACDSM-SWS"));
@@ -687,7 +706,6 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(776, new Value("wpages", "wpages"));
         super.addValue(777, new Value("multiling-http", "Multiling HTTP"));
         super.addValue(780, new Value("wpgs", "wpgs"));
-        super.addValue(800, new Value("mdbs-daemon", "mdbs-daemon"));
         super.addValue(800, new Value("mdbs_daemon", "mdbs_daemon"));
         super.addValue(801, new Value("device", "device"));
         super.addValue(802, new Value("mbap-s", "Modbus Application Protocol Secure"));
@@ -725,7 +743,7 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(991, new Value("nas", "Netnews Administration System"));
         super.addValue(992, new Value("telnets", "telnet protocol over TLS/SSL"));
         super.addValue(993, new Value("imaps", "IMAP over TLS protocol"));
-        super.addValue(994, new Value("", "Reserved"));
+        super.addValue(994, new Value("Reserved", ""));
         super.addValue(995, new Value("pop3s", "POP3 over TLS protocol"));
         super.addValue(996, new Value("vsinet", "vsinet"));
         super.addValue(997, new Value("maitrd", "maitrd"));
@@ -737,6 +755,7 @@ public class TCPWellKnownPorts extends ProtocolField {
         super.addValue(1010, new Value("surf", "surf"));
         super.addValue(1021, new Value("exp1", "RFC3692-style Experiment 1"));
         super.addValue(1022, new Value("exp2", "RFC3692-style Experiment 2"));
-        super.addValue(1023, new Value("", "Reserved"));
+        super.addValue(1023, new Value("Reserved", ""));
+
     }
 }

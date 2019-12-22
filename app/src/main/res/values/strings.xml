@@ -19,8 +19,8 @@
     <string name="ipv4_options">ipv4.options</string>
     <string name="ipv4_protocols">ipv4.protocols</string>
     <string name="ipv6_extension_headers">ipv6.extension_headers</string>
-    <string name="tcp_well_known_ports">tcp.well_known_ports</string>
-    <string name="udp_well_known_ports">udp.well_known_ports</string>
+    <string name="tcp_system_ports">tcp.system_ports</string>
+    <string name="udp_system_ports">udp.system_ports</string>
     <string name="nothing_found">-</string>
     <string name="hint_select_pro">Select a protocol field</string>
     <string name="nothing_entered">Enter a value above</string>
