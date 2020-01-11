@@ -8,6 +8,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import ch1mp.bahdulator.converters.DecConverter;
+import ch1mp.bahdulator.protocols.Protocol;
 import ch1mp.bahdulator.protocols.ProtocolField;
 import ch1mp.bahdulator.protocols.Value;
 import ch1mp.bahdulator.protocols.fields.*;
@@ -163,23 +164,41 @@ class ProtocolHandler {
             return new DNSRCodes();
         }else if(name.equals(context.getString(R.string.dns_rrtypes))){
             return new DNSRRTypes();
+        }else if(name.equals(context.getString(R.string.dns_header_offsets))){
+            return new HeaderOffsets(Protocol.DNS);
         }else if(name.equals(context.getString(R.string.eth_types))){
             return new EtherTypes();
+        }else if(name.equals(context.getString(R.string.eth_header_offsets))){
+            return new HeaderOffsets(Protocol.ETH);
         }else if(name.equals(context.getString(R.string.icmp_types))){
             return new ICMPTypes();
+        }else if(name.equals(context.getString(R.string.icmp_header_offsets))){
+            return new HeaderOffsets(Protocol.ICMP);
         }else if(name.equals(context.getString(R.string.icmpv6_types))){
             return new ICMPv6Types();
+        }else if(name.equals(context.getString(R.string.icmpv6_header_offsets))){
+            return new HeaderOffsets(Protocol.ICMPV6);
         }else if(name.equals(context.getString(R.string.ipv4_options))){
             return new IPv4Options();
         }else if(name.equals(context.getString(R.string.ipv4_protocols))){
             return new IPv4Protocols();
+        }else if(name.equals(context.getString(R.string.ipv4_header_offsets))){
+            return new HeaderOffsets(Protocol.IPV4);
         }else if(name.equals(context.getString(R.string.ipv6_extension_headers))){
             return new IPv6ExtensionHeaders();
+        }else if(name.equals(context.getString(R.string.ipv6_header_offsets))){
+            return new HeaderOffsets(Protocol.IPV6);
         }else if(name.equals(context.getString(R.string.tcp_system_ports))){
             return new TCPSystemPorts();
+        }else if(name.equals(context.getString(R.string.tcp_header_offsets))){
+            return new HeaderOffsets(Protocol.TCP);
         }else if(name.equals(context.getString(R.string.udp_system_ports))){
             return new UDPSystemPorts();
-        }else return null;
+        }else if(name.equals(context.getString(R.string.udp_header_offsets))){
+            return new HeaderOffsets(Protocol.UDP);
+        }
+
+        return null;
     }
 
     /**

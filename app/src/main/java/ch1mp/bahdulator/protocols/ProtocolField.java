@@ -58,4 +58,6 @@ public abstract class ProtocolField {
 
     public int getMin(){ return min; }
     public int getMax(){ return max; }
+
+    public void setName(String name){ this.name = name; }
 }
