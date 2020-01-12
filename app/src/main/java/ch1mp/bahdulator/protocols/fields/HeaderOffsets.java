@@ -26,65 +26,48 @@ public class HeaderOffsets extends ProtocolField {
     private void setUpARP(){
         setName("arp" + ho);
         addValue(0, new Value("HRD", "Hardware Type"));
-        addValue(16, new Value("PRO", "Protocol Type"));
-        addValue(32, new Value("HLN", "Hardware Address Length"));
-        addValue(40, new Value("PLN", "Protocol Address Length"));
-        addValue(48, new Value("OP", "Operation Code"));
-        addValue(64, new Value("SHA", "Sender Hardware Address (for ETH & IPv4)"));
-        addValue(96, new Value("SPA", "Sender Protocol Address (for ETH & IPv4)"));
-        addValue(144, new Value("THA", "Target Hardware Address (for ETH & IPv4)"));
-        addValue(192, new Value("TPA", "Target Protocol Address (for ETH & IPv4)"));
+        addValue(2, new Value("PRO", "Protocol Type"));
+        addValue(4, new Value("HLN", "Hardware Address Length"));
+        addValue(5, new Value("PLN", "Protocol Address Length"));
+        addValue(6, new Value("OP", "Operation Code"));
+        addValue(8, new Value("SHA", "Sender Hardware Address (for ETH & IPv4)"));
+        addValue(14, new Value("SPA", "Sender Protocol Address (for ETH & IPv4)"));
+        addValue(18, new Value("THA", "Target Hardware Address (for ETH & IPv4)"));
+        addValue(24, new Value("TPA", "Target Protocol Address (for ETH & IPv4)"));
     }
 
     private void setUpDNS(){
         setName("dns" + ho);
         addValue(0, new Value("ID", "Identifier"));
-        addValue(16, new Value("QR", "Query/Response Flag"));
-        addValue(17, new Value("OPCODE", "Operation Code"));
-        addValue(21, new Value("AA", "Authoritative Answer Flag"));
-        addValue(22, new Value("TC", "Truncation Flag"));
-        addValue(23, new Value("RD", "Recursion Desired Flag"));
-        addValue(24, new Value("RA", "Recursion Available Flag"));
-        addValue(25, new Value("Z", "Zero"));
-        addValue(26, new Value("AD", "Authentic Data (DNSSEC)"));
-        addValue(27, new Value("CD", "Checking Disabled (DNSSEC)"));
-        addValue(28, new Value("RCODE", "Response Code"));
-        addValue(32, new Value("QDCount", "Question Count"));
-        addValue(48, new Value("ANCount", "Answer Count"));
-        addValue(64, new Value("NSCount", "Authority Record Count"));
-        addValue(80, new Value("ARCount", "Additional Record Count"));
-        addValue(96, new Value("RR", "Resource Records (Variable Length)"));
+        addValue(2, new Value("Flags", "QR|OPCODE(4 bits)|AA|TC|RD|RA|Z|AD|CD|RCODE(4 bits)"));
+        addValue(4, new Value("Query Count", ""));
+        addValue(6, new Value("Answer Count", ""));
+        addValue(8, new Value("Authority Record Count", ""));
+        addValue(10, new Value("Additional Record Count", ""));
+        addValue(12, new Value("RR", "Resource Records (Variable Length)"));
     }
 
     private void setUpETH(){
         setName("eth" + ho);
         addValue(0, new Value("Destination MAC Address", ""));
-        addValue(48, new Value("Source MAC Address", ""));
-        addValue(96, new Value("Ethernet Type/VLAN tag", ""));
-        addValue(112, new Value("TCI", "Tag Control Information (if VLAN)"));
-        addValue(128, new Value("Ethernet Type", "(if VLAN)"));
+        addValue(6, new Value("Source MAC Address", ""));
+        addValue(12, new Value("Ethernet Type/VLAN tag", ""));
+        addValue(14, new Value("TCI", "Tag Control Information (if VLAN)"));
+        addValue(16, new Value("Ethernet Type", "(if VLAN)"));
     }
 
     private void setUpTCP(){
         setName("tcp" + ho);
         addValue(0, new Value("Source Port", ""));
-        addValue(16, new Value("Destination Port", ""));
-        addValue(32, new Value("Sequence Number", ""));
-        addValue(64, new Value("Acknowledgment Number", ""));
-        addValue(96, new Value("Data Offset/Header Length", ""));
-        addValue(100, new Value("Reserved", ""));
-        addValue(104, new Value("CWR", "Congestion Window Reduced Flag"));
-        addValue(105, new Value("ECE", "Explicit Congestion Echo Flag"));
-        addValue(106, new Value("URG", "Urgent Flag"));
-        addValue(107, new Value("ACK", "Acknowledge Flag"));
-        addValue(108, new Value("PUSH", "Push Flag"));
-        addValue(109, new Value("RST", "Reset Flag"));
-        addValue(110, new Value("SYN", "Synchronize Flag"));
-        addValue(111, new Value("FIN", "Finish Flag"));
-        addValue(112, new Value("Window Size", ""));
-        addValue(128, new Value("Checksum", ""));
-        addValue(144, new Value("Urgent Pointer", ""));
-        addValue(160, new Value("Options", "(Variable length)"));
+        addValue(2, new Value("Destination Port", ""));
+        addValue(4, new Value("Sequence Number", ""));
+        addValue(8, new Value("Acknowledgment Number", ""));
+        addValue(12, new Value("Header Length (4 bits) & Reserved (4 bits)", ""));
+        addValue(13, new Value("Flags", "CWR|ECE|URG|ACK|PSH|RST|SYN|FIN"));
+        addValue(14, new Value("Window Size", ""));
+        addValue(16, new Value("Checksum", ""));
+        addValue(18, new Value("Urgent Pointer", ""));
+        addValue(20, new Value("Options", "(Variable length)"));
     }
 
     private void setUpUDP(){
@@ -98,41 +81,34 @@ public class HeaderOffsets extends ProtocolField {
     private void setUpICMP(){
         setName("icmp" + ho);
         addValue(0, new Value("Type", ""));
-        addValue(8, new Value("Code", ""));
-        addValue(16, new Value("Checksum", ""));
-        addValue(32, new Value("Additional information", ""));
+        addValue(2, new Value("Code", ""));
+        addValue(4, new Value("Checksum", ""));
+        addValue(6, new Value("Additional information", ""));
     }
 
     private void setUpIPV4(){
         setName("ipv4" + ho);
-        addValue(0, new Value("Version", ""));
-        addValue(4, new Value("IHL", "Internet Header Length"));
-        addValue(8, new Value("TOS", "Type of Service/Differentiated Services"));
-        addValue(14, new Value("ECN", "Explicit Congestion Notification bits"));
-        addValue(16, new Value("TL", "Total Length"));
-        addValue(32, new Value("ID", "Identification"));
-        addValue(48, new Value("Reserved", "Zero"));
-        addValue(49, new Value("DF", "Don't Fragment"));
-        addValue(50, new Value("MF", "More Fragments"));
-        addValue(51, new Value("Fragment Offset", ""));
-        addValue(64, new Value("TTL", "Time to Live"));
-        addValue(72, new Value("Protocol", ""));
-        addValue(80, new Value("Header Checksum", ""));
-        addValue(96, new Value("Source Address", ""));
-        addValue(128, new Value("Destination Address", ""));
-        addValue(160, new Value("Options", "(Variable Length)"));
+        addValue(0, new Value("Version (4 bits) & Header Length (4 bits)", ""));
+        addValue(1, new Value("TOS", "Type of Service/Differentiated Services"));
+        addValue(2, new Value("TL", "Total Length"));
+        addValue(4, new Value("ID", "Identification"));
+        addValue(6, new Value("Flags (3 bits) & Fragmentation Offset (13 bits)", "Zero|DF|MF|Offset"));
+        addValue(8, new Value("TTL", "Time to Live"));
+        addValue(9, new Value("Protocol", ""));
+        addValue(10, new Value("Header Checksum", ""));
+        addValue(12, new Value("Source Address", ""));
+        addValue(16, new Value("Destination Address", ""));
+        addValue(20, new Value("Options", "(Variable Length)"));
     }
 
     private void setUpIPv6(){
         setName("ipv6" + ho);
-        addValue(0, new Value("Version", ""));
-        addValue(4, new Value("Traffic Class", ""));
-        addValue(12, new Value("Flow Label", ""));
-        addValue(32, new Value("Payload Length", ""));
-        addValue(48, new Value("NH", "Next Header"));
-        addValue(56, new Value("Hop Limit", ""));
-        addValue(64, new Value("Source Address", ""));
-        addValue(192, new Value("Destination Address", ""));
-        addValue(320, new Value("EH", "Extension Headers (Variable Length)"));
+        addValue(0, new Value("Version (4 bits) & Traffic Class (8 bits) & Flow Label (20 bits)", ""));
+        addValue(4, new Value("Payload Length", ""));
+        addValue(6, new Value("NH", "Next Header"));
+        addValue(7, new Value("Hop Limit", ""));
+        addValue(8, new Value("Source Address", ""));
+        addValue(24, new Value("Destination Address", ""));
+        addValue(40, new Value("EH", "Extension Headers (Variable Length)"));
     }
 }
