@@ -2,6 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/arp_header_offsets"
+        android:title="@string/arp_header_offsets"
+        />
+    <item
+        android:id="@+id/dns_header_offsets"
+        android:title="@string/dns_header_offsets"
+        />
+    <item
         android:id="@+id/dns_opcodes"
         android:title="@string/dns_opcodes"
         />
@@ -14,16 +22,29 @@
         android:title="@string/dns_rrtypes"
         />
     <item
+        android:id="@+id/eth_header_offsets"
+        android:title="@string/eth_header_offsets"
+        />
+    <item
         android:id="@+id/eth_types"
         android:title="@string/eth_types"
+        />
+    <item
+        android:id="@+id/icmp_header_offsets"
+        android:title="@string/icmp_header_offsets"
         />
     <item
         android:id="@+id/icmp_types"
         android:title="@string/icmp_types"
         />
+
     <item
         android:id="@+id/icmpv6_types"
         android:title="@string/icmpv6_types"
+        />
+    <item
+        android:id="@+id/ipv4_header_offsets"
+        android:title="@string/ipv4_header_offsets"
         />
     <item
         android:id="@+id/ipv4_options"
@@ -33,16 +54,34 @@
         android:id="@+id/ipv4_protocols"
         android:title="@string/ipv4_protocols"
         />
+
     <item
         android:id="@+id/ipv6_extensionheaders"
         android:title="@string/ipv6_extension_headers"
+        />
+    <item
+        android:id="@+id/ipv6_header_offsets"
+        android:title="@string/ipv6_header_offsets"
         />
     <item
         android:id="@+id/tcp_common_ports"
         android:title="@string/tcp_system_ports"
         />
     <item
+        android:id="@+id/tcp_header_offsets"
+        android:title="@string/tcp_header_offsets"
+        />
+    <item
+        android:id="@+id/tcp_option_kinds"
+        android:title="@string/tcp_option_kinds"
+        />
+    <item
         android:id="@+id/udp_common_ports"
         android:title="@string/udp_system_ports"
         />
+    <item
+        android:id="@+id/udp_header_offsets"
+        android:title="@string/udp_header_offsets"
+        />
+
 </menu>

@@ -40,7 +40,7 @@ class ProtocolHandler {
      */
     private void setUpMenu(){
 
-        menuAnchor.setText(R.string.dns_opcodes);
+        menuAnchor.setText(R.string.arp_header_offsets);
 
         protocolMenu = new PopupMenu(context, menuAnchor);
         protocolMenu.getMenuInflater().inflate(R.menu.protocol_menu, protocolMenu.getMenu());
@@ -176,8 +176,6 @@ class ProtocolHandler {
             return new HeaderOffsets(Protocol.ICMP);
         }else if(name.equals(context.getString(R.string.icmpv6_types))){
             return new ICMPv6Types();
-        }else if(name.equals(context.getString(R.string.icmpv6_header_offsets))){
-            return new HeaderOffsets(Protocol.ICMPV6);
         }else if(name.equals(context.getString(R.string.ipv4_options))){
             return new IPv4Options();
         }else if(name.equals(context.getString(R.string.ipv4_protocols))){
@@ -192,10 +190,14 @@ class ProtocolHandler {
             return new TCPSystemPorts();
         }else if(name.equals(context.getString(R.string.tcp_header_offsets))){
             return new HeaderOffsets(Protocol.TCP);
+        }else if(name.equals(context.getString(R.string.tcp_option_kinds))){
+            return new TCPOptionKinds();
         }else if(name.equals(context.getString(R.string.udp_system_ports))){
             return new UDPSystemPorts();
         }else if(name.equals(context.getString(R.string.udp_header_offsets))){
             return new HeaderOffsets(Protocol.UDP);
+        }else if(name.equals(context.getString(R.string.arp_header_offsets))){
+            return new HeaderOffsets(Protocol.ARP);
         }
 
         return null;

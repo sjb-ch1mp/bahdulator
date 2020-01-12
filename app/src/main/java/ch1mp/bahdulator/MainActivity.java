@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         setUpButtons();
 
         activeValue = 0;
-        activeProtocol = getString(R.string.dns_opcodes);
+        activeProtocol = getString(R.string.arp_header_offsets);
 
         try{inputHandler.doConversion(new DecConverter(String.valueOf(activeValue)));}
         catch(Exception e){ /*do nothing*/}

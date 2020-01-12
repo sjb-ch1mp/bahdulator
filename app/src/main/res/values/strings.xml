@@ -19,7 +19,6 @@
     <string name="icmp_types">icmp.types</string>
     <string name="icmp_header_offsets">icmp.header_offsets</string>
     <string name="icmpv6_types">icmpv6.types</string>
-    <string name="icmpv6_header_offsets">icmpv6.header_offsets</string>
     <string name="ipv4_options">ipv4.options</string>
     <string name="ipv4_protocols">ipv4.protocols</string>
     <string name="ipv4_header_offsets">ipv4.header_offsets</string>
@@ -27,8 +26,10 @@
     <string name="ipv6_header_offsets">ipv6.header_offsets</string>
     <string name="tcp_system_ports">tcp.system_ports</string>
     <string name="tcp_header_offsets">tcp.header_offsets</string>
+    <string name="tcp_option_kinds">tcp.option_kinds</string>
     <string name="udp_system_ports">udp.system_ports</string>
     <string name="udp_header_offsets">udp.header_offsets</string>
+    <string name="arp_header_offsets">arp.header_offsets</string>
     <string name="nothing_found">-</string>
     <string name="hint_select_pro">Select a protocol field</string>
     <string name="nothing_entered">Enter a value above</string>
