@@ -86,6 +86,16 @@ class ProtocolHandler {
         }
     }
 
+    /**
+     * When the user presses the up or down arrow, this method searches through the active
+     * protocol field for the next valid value above or below the current value.
+     *
+     * @param activeProtocol - the current protocol field on the protocol field button
+     * @param activeValue - the current value showing in the Binary, Decimal, Hex and Ascii fields
+     * @param up - true if the up button has been pressed, false otherwise
+     * @throws NothingFoundException - thrown if the current value is at the maximum or minimum
+     *      value for this protocol field
+     */
     public void searchForNextValue(String activeProtocol, int activeValue, boolean up) throws NothingFoundException {
 
         ProtocolField pf = getProtocolField(activeProtocol);
@@ -134,6 +144,10 @@ class ProtocolHandler {
         }
     }
 
+    /**
+     * Displays the protocol field meaning for this value.
+     * @param value - the current value.
+     */
     private void displayProtocolDetails(Value value){
         if (!value.getId().equals(value.getDescription())){
             if(value.getId().equals("")){
