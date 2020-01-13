@@ -81,9 +81,9 @@ public class HeaderOffsets extends ProtocolField {
     private void setUpICMP(){
         setName("icmp" + ho);
         addValue(0, new Value("Type", ""));
-        addValue(2, new Value("Code", ""));
-        addValue(4, new Value("Checksum", ""));
-        addValue(6, new Value("Additional information", ""));
+        addValue(1, new Value("Code", ""));
+        addValue(2, new Value("Checksum", ""));
+        addValue(4, new Value("Additional information", ""));
     }
 
     private void setUpIPV4(){
